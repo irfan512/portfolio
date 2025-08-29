@@ -83,7 +83,7 @@ function Hero() {
                 ref={h11}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
               >
-                Hi,👋<br className="hidden sm:block" />
+                Hi <br className="hidden sm:block" />
                 My Name is<br className="hidden sm:block" />
               </h1>
               <h1
@@ -118,13 +118,12 @@ function Hero() {
                 Get In Touch
               </a>
               <a 
-                href="/resume.html" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="/portfolio/resume.pdf" 
+                download="Syed_Irfan_Haider_Resume.pdf"
                 className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center flex items-center justify-center space-x-2"
               >
-                <i className="fas fa-file-pdf text-lg"></i>
-                <span>Resume</span>
+                <span>📄</span>
+                <span>Download Resume</span>
               </a>
             </div>
           </div>
@@ -147,7 +146,7 @@ function Hero() {
           </div>
 
           {/* Social Links */}
-          <div ref={socialRef} className="mt-12 md:mt-16 text-center">
+          {/* <div ref={socialRef} className="mt-12 md:mt-16 text-center">
             <div className="flex justify-center space-x-4 sm:space-x-6">
               <a 
                 href={socialMediaUrl.github} 
@@ -174,14 +173,7 @@ function Hero() {
                 <i className="fab fa-twitter text-lg sm:text-xl"></i>
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+          </div> */}
         </div>
       </div>
     </section>

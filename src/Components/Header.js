@@ -104,6 +104,21 @@ function Header() {
             </button>
           </nav>
 
+          {/* Resume Download Button */}
+          <a 
+            href="/portfolio/resume.pdf" 
+            download="Syed_Irfan_Haider_Resume.pdf"
+            className={`hidden md:flex items-center space-x-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 ${
+              scrolled 
+                ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg' 
+                : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
+            }`}
+            title="Download Resume"
+          >
+            <span>📄</span>
+            <span>Resume</span>
+          </a>
+
           {/* Social Media Icons - Right Side */}
           <div className="flex items-center space-x-3">
             <a 
@@ -217,6 +232,18 @@ function Header() {
             >
               Contact
             </button>
+            
+            {/* Resume Download in Mobile Menu */}
+            <a 
+              href="/portfolio/resume.pdf" 
+              download="Syed_Irfan_Haider_Resume.pdf"
+              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
+                scrolled ? 'text-gray-700' : 'text-white'
+              }`}
+              title="Download Resume"
+            >
+              📄 Download Resume
+            </a>
           </div>
         </nav>
       </div>

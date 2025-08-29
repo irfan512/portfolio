@@ -347,6 +347,20 @@ function Contact() {
               </div>
             </div>
 
+            {/* Resume Download */}
+            <div className="space-y-4">
+              <h4 className="text-xl font-semibold text-gray-900">Download Resume</h4>
+              <a 
+                href="/portfolio/resume.pdf" 
+                download="Syed_Irfan_Haider_Resume.pdf"
+                className="flex items-center justify-center space-x-3 w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                title="Download Resume"
+              >
+                <span>📄</span>
+                <span>Download Resume (PDF)</span>
+              </a>
+            </div>
+
             {/* Quick Response */}
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100">
               <h4 className="text-xl font-semibold text-gray-900 mb-3">

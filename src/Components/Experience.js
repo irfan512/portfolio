@@ -217,13 +217,23 @@ function Experience() {
             <p className="text-gray-600 mb-6">
               I'm always open to discussing new opportunities and exciting projects.
             </p>
-            <a 
-              href="#contact" 
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <i className="fas fa-envelope mr-2"></i>
-              Get In Touch
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <i className="fas fa-envelope mr-2"></i>
+                Get In Touch
+              </a>
+              <a 
+                href="/portfolio/resume.pdf" 
+                download="Syed_Irfan_Haider_Resume.pdf"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <span className="mr-2">📄</span>
+                Download Resume
+              </a>
+            </div>
           </div>
         </div>
       </div>

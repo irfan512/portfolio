@@ -49,6 +49,15 @@ function Footer() {
                   Contact
                 </a>
               </li>
+              <li>
+                <a 
+                  href="/portfolio/resume.pdf" 
+                  download="Syed_Irfan_Haider_Resume.pdf"
+                  className="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                >
+                  📄 Download Resume
+                </a>
+              </li>
             </ul>
           </div>
 

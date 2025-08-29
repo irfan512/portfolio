@@ -119,9 +119,9 @@ function Projects() {
 
                 {/* Floating Badge */}
                 <div className="absolute top-4 right-4">
-                  <div className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  {/* <div className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
                     {project.techstack.includes('Flutter') ? 'Flutter' : 'Mobile'}
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -184,13 +184,23 @@ function Projects() {
               I'm always excited to work on new and challenging projects. 
               Let's discuss how we can bring your innovative ideas to life with cutting-edge technology!
             </p>
-            <a 
-              href="#contact" 
-              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-2xl hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg"
-            >
-              <i className="fas fa-rocket mr-3"></i>
-              Start a Project
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-2xl hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg"
+              >
+                <i className="fas fa-rocket mr-3"></i>
+                Start a Project
+              </a>
+              <a 
+                href="/portfolio/resume.pdf" 
+                download="Syed_Irfan_Haider_Resume.pdf"
+                className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg"
+              >
+                <span className="mr-3">📄</span>
+                Download Resume
+              </a>
+            </div>
           </div>
         </div>
       </div>

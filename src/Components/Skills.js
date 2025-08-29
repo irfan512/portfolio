@@ -174,10 +174,18 @@ function Skills() {
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
               Always Learning & Growing
             </h3>
-            <p className="text-gray-600 max-w-2xl">
+            <p className="text-gray-600 max-w-2xl mb-6">
               I'm constantly exploring new technologies and frameworks to stay at the forefront of development trends. 
               My passion for learning drives me to deliver cutting-edge solutions.
             </p>
+            <a 
+              href="/portfolio/resume.pdf" 
+              download="Syed_Irfan_Haider_Resume.pdf"
+              className="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <span>📄</span>
+              <span>Download My Resume</span>
+            </a>
           </div>
         </div>
       </div>
