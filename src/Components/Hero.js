@@ -117,6 +117,15 @@ function Hero() {
               >
                 Get In Touch
               </a>
+              <a 
+                href="/resume.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center flex items-center justify-center space-x-2"
+              >
+                <i className="fas fa-file-pdf text-lg"></i>
+                <span>Resume</span>
+              </a>
             </div>
           </div>
 
@@ -136,35 +145,35 @@ function Hero() {
               <div className="absolute top-1/2 -right-6 sm:-right-8 w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full animate-pulse"></div>
             </div>
           </div>
-        </div>
 
-        {/* Social Links */}
-        <div ref={socialRef} className="mt-12 md:mt-16 text-center">
-          <div className="flex justify-center space-x-4 sm:space-x-6">
-            <a 
-              href={socialMediaUrl.github} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
-            >
-              <i className="fab fa-github text-lg sm:text-xl"></i>
-            </a>
-            <a 
-              href={socialMediaUrl.linkdein} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
-            >
-              <i className="fab fa-linkedin text-lg sm:text-xl"></i>
-            </a>
-            <a 
-              href={socialMediaUrl.twitter} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
-            >
-              <i className="fab fa-twitter text-lg sm:text-xl"></i>
-            </a>
+          {/* Social Links */}
+          <div ref={socialRef} className="mt-12 md:mt-16 text-center">
+            <div className="flex justify-center space-x-4 sm:space-x-6">
+              <a 
+                href={socialMediaUrl.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
+              >
+                <i className="fab fa-github text-lg sm:text-xl"></i>
+              </a>
+              <a 
+                href={socialMediaUrl.linkdein} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
+              >
+                <i className="fab fa-linkedin text-lg sm:text-xl"></i>
+              </a>
+              <a 
+                href={socialMediaUrl.twitter} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
+              >
+                <i className="fab fa-twitter text-lg sm:text-xl"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
