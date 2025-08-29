@@ -8,8 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 function Experience() {
   const sectionRef = useRef();
   const headerRef = useRef();
-  const workRef = useRef();
-  const eduRef = useRef();
+  const timelineRef = useRef();
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -25,30 +24,26 @@ function Experience() {
       { y: 100, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
     )
-    .fromTo(workRef.current,
+    .fromTo(timelineRef.current,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
       "-=0.5"
-    )
-    .fromTo(eduRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-      "-=0.3"
     );
 
     // Animate timeline items
-    const timelineItems = sectionRef.current?.querySelectorAll('.timeline-item');
+    const timelineItems = timelineRef.current?.querySelectorAll('.timeline-item');
     if (timelineItems) {
       gsap.fromTo(timelineItems,
-        { x: -100, opacity: 0 },
+        { x: -100, opacity: 0, scale: 0.9 },
         {
           x: 0,
           opacity: 1,
+          scale: 1,
           duration: 0.8,
           stagger: 0.2,
-          ease: "power3.out",
+          ease: "back.out(1.7)",
           scrollTrigger: {
-            trigger: sectionRef.current,
+            trigger: timelineRef.current,
             start: "top 70%",
             toggleActions: "play none none reverse"
           }
@@ -65,119 +60,157 @@ function Experience() {
     <section 
       id="experience" 
       ref={sectionRef}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(45deg, #6366f1 25%, transparent 25%), linear-gradient(-45deg, #6366f1 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #6366f1 75%), linear-gradient(-45deg, transparent 75%, #6366f1 75%)`,
-          backgroundSize: '20px 20px',
-          backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-        }}></div>
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" ref={headerRef}>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Journey</span>
+        <div className="text-center mb-20" ref={headerRef}>
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            My <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Journey</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A timeline of my professional growth and educational achievements
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+            A timeline of my professional growth, from early beginnings to current achievements
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6"></div>
+          <div className="w-32 h-1.5 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 mx-auto rounded-full shadow-lg"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Work Experience */}
-          <div ref={workRef} className="space-y-8">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                Work <span className="text-purple-600">Experience</span>
-              </h3>
-              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+        {/* Timeline Container */}
+        <div ref={timelineRef} className="relative">
+          {/* Central Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-400 via-pink-400 to-blue-400 rounded-full shadow-2xl"></div>
+
+          {/* Work Experience Section */}
+          <div className="mb-20">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full border border-white/20">
+                <i className="fas fa-briefcase text-2xl text-purple-400"></i>
+                <h3 className="text-2xl font-bold text-white">Work Experience</h3>
+              </div>
             </div>
 
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500"></div>
-              
+            <div className="space-y-12">
               {workDetails.map((work, index) => (
-                <div key={index} className="timeline-item relative mb-8 ml-12">
-                  {/* Timeline Dot */}
-                  <div className="absolute -left-12 top-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-                    <i className="fas fa-briefcase text-white text-sm"></i>
-                  </div>
+                <div 
+                  key={index} 
+                  className={`timeline-item relative flex items-center ${
+                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  }`}
+                >
+                  {/* Timeline Node */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full border-4 border-slate-900 shadow-2xl z-10"></div>
                   
                   {/* Content Card */}
-                  <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-l-4 border-purple-500">
-                    <div className="space-y-3">
-                      <h4 className="text-xl font-semibold text-gray-900">{work.Position}</h4>
-                      <div className="flex items-center space-x-2 text-purple-600 font-medium">
-                        <i className="fas fa-building text-sm"></i>
-                        <span>{work.Company}</span>
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                      {/* Position & Company */}
+                      <div className="space-y-3 mb-6">
+                        <h4 className="text-2xl font-bold text-white leading-tight">
+                          {work.Position}
+                        </h4>
+                        <div className="flex items-center space-x-2 justify-center">
+                          <i className="fas fa-building text-purple-400"></i>
+                          <span className="text-lg text-purple-300 font-semibold">
+                            {work.Company}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2 text-gray-600">
-                        <i className="fas fa-map-marker-alt text-sm"></i>
-                        <span>{work.Location}</span>
+
+                      {/* Details Grid */}
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
+                          <i className="fas fa-map-marker-alt text-blue-400 mb-2"></i>
+                          <p className="text-sm text-gray-300">{work.Location}</p>
+                        </div>
+                        <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
+                          <i className="fas fa-clock text-green-400 mb-2"></i>
+                          <p className="text-sm text-gray-300">{work.Type}</p>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                          {work.Type}
-                        </span>
-                        <span className="text-gray-500 text-sm font-medium">
-                          {work.Duration}
-                        </span>
+
+                      {/* Duration */}
+                      <div className="text-center">
+                        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 rounded-full border border-purple-400/30">
+                          <i className="fas fa-calendar-alt text-purple-400"></i>
+                          <span className="text-purple-300 font-medium">{work.Duration}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Spacer for odd items */}
+                  <div className="w-5/12"></div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Education */}
-          <div ref={eduRef} className="space-y-8">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                <span className="text-purple-600">Education</span> & Training
-              </h3>
-              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+          {/* Education Section */}
+          <div className="mb-20">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full border border-white/20">
+                <i className="fas fa-graduation-cap text-2xl text-blue-400"></i>
+                <h3 className="text-2xl font-bold text-white">Education</h3>
+              </div>
             </div>
 
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-              
+            <div className="space-y-12">
               {eduDetails.map((edu, index) => (
-                <div key={index} className="timeline-item relative mb-8 ml-12">
-                  {/* Timeline Dot */}
-                  <div className="absolute -left-12 top-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
-                    <i className="fas fa-graduation-cap text-white text-sm"></i>
-                  </div>
+                <div 
+                  key={index} 
+                  className={`timeline-item relative flex items-center ${
+                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  }`}
+                >
+                  {/* Timeline Node */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full border-4 border-slate-900 shadow-2xl z-10"></div>
                   
                   {/* Content Card */}
-                  <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-l-4 border-blue-500">
-                    <div className="space-y-3">
-                      <h4 className="text-xl font-semibold text-gray-900">{edu.Position}</h4>
-                      <div className="flex items-center space-x-2 text-blue-600 font-medium">
-                        <i className="fas fa-university text-sm"></i>
-                        <span>{edu.Company}</span>
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                      {/* Position & Company */}
+                      <div className="space-y-3 mb-6">
+                        <h4 className="text-2xl font-bold text-white leading-tight">
+                          {edu.Position}
+                        </h4>
+                        <div className="flex items-center space-x-2 justify-center">
+                          <i className="fas fa-university text-blue-400"></i>
+                          <span className="text-lg text-blue-300 font-semibold">
+                            {edu.Company}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2 text-gray-600">
-                        <i className="fas fa-map-marker-alt text-sm"></i>
-                        <span>{edu.Location}</span>
+
+                      {/* Details Grid */}
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
+                          <i className="fas fa-map-marker-alt text-blue-400 mb-2"></i>
+                          <p className="text-sm text-gray-300">{edu.Location}</p>
+                        </div>
+                        <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
+                          <i className="fas fa-clock text-green-400 mb-2"></i>
+                          <p className="text-sm text-gray-300">{edu.Type}</p>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                          {edu.Type}
-                        </span>
-                        <span className="text-gray-500 text-sm font-medium">
-                          {edu.Duration}
-                        </span>
+
+                      {/* Duration */}
+                      <div className="text-center">
+                        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 px-4 py-2 rounded-full border border-blue-400/30">
+                          <i className="fas fa-calendar-alt text-blue-400"></i>
+                          <span className="text-blue-300 font-medium">{edu.Duration}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Spacer for odd items */}
+                  <div className="w-5/12"></div>
                 </div>
               ))}
             </div>
@@ -185,19 +218,20 @@ function Experience() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl inline-block">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Ready for the Next Chapter
+        <div className="text-center mt-20">
+          <div className="bg-white/10 backdrop-blur-sm p-12 rounded-3xl border border-white/20 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-6">
+              Ready to Start Our Journey Together? 🚀
             </h3>
-            <p className="text-gray-600 max-w-2xl mb-6">
-              I'm always looking for new opportunities to grow, learn, and contribute to amazing projects. 
-              Let's work together to create something extraordinary!
+            <p className="text-gray-300 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
+              With years of experience and a passion for innovation, I'm ready to bring your ideas to life. 
+              Let's create something amazing together!
             </p>
             <a 
               href="#contact" 
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-2xl hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg"
             >
+              <i className="fas fa-rocket mr-3"></i>
               Let's Connect
             </a>
           </div>
