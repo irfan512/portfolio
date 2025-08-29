@@ -31,21 +31,21 @@ function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center py-4">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center py-3 md:py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-500/30">
+          <div className="flex items-center space-x-2 md:space-x-3">
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden border-2 border-purple-500/30">
               <img 
                 className="w-full h-full object-cover" 
                 src={personalDetails.img} 
                 alt="logo" 
               />
             </div>
-            <span className={`font-bold text-xl transition-colors duration-300 ${
+            <span className={`font-bold text-lg md:text-xl transition-colors duration-300 ${
               scrolled ? 'text-gray-900' : 'text-white'
             }`}>
               {personalDetails.name.split(" ")[1] + " " + personalDetails.name.split(" ")[2]}
@@ -54,13 +54,13 @@ function Header() {
 
           {/* Mobile Menu Button */}
           <div onClick={toggleClass} className="cursor-pointer md:hidden">
-            <div className={`w-6 h-0.5 transition-all duration-300 ${
+            <div className={`w-5 h-0.5 transition-all duration-300 ${
               scrolled ? 'bg-gray-900' : 'bg-white'
             } ${isOpen ? 'rotate-45 translate-y-1' : ''}`}></div>
-            <div className={`w-6 h-0.5 my-1 transition-all duration-300 ${
+            <div className={`w-5 h-0.5 my-1 transition-all duration-300 ${
               scrolled ? 'bg-gray-900' : 'bg-white'
             } ${isOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-6 h-0.5 transition-all duration-300 ${
+            <div className={`w-5 h-0.5 transition-all duration-300 ${
               scrolled ? 'bg-gray-900' : 'bg-white'
             } ${isOpen ? '-rotate-45 -translate-y-1' : ''}`}></div>
           </div>
@@ -72,13 +72,13 @@ function Header() {
         } md:block`}>
           <div className="md:flex md:justify-between md:items-center">
             {/* Navigation Links */}
-            <ul className={`font-medium md:flex md:items-center md:space-x-8 py-4 md:py-0 ${
+            <ul className={`font-medium md:flex md:items-center md:space-x-6 lg:space-x-8 py-3 md:py-0 ${
               scrolled ? 'text-gray-900' : 'text-white'
             }`}>
               <li>
                 <button
                   onClick={() => scrollToSection('home')}
-                  className="hover:text-purple-400 transition-colors duration-300 font-medium"
+                  className="hover:text-purple-400 transition-colors duration-300 font-medium text-sm md:text-base py-2 md:py-0"
                 >
                   Home
                 </button>
@@ -86,7 +86,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="hover:text-purple-400 transition-colors duration-300 font-medium"
+                  className="hover:text-purple-400 transition-colors duration-300 font-medium text-sm md:text-base py-2 md:py-0"
                 >
                   About
                 </button>
@@ -94,7 +94,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => scrollToSection('skills')}
-                  className="hover:text-purple-400 transition-colors duration-300 font-medium"
+                  className="hover:text-purple-400 transition-colors duration-300 font-medium text-sm md:text-base py-2 md:py-0"
                 >
                   Skills
                 </button>
@@ -102,7 +102,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => scrollToSection('experience')}
-                  className="hover:text-purple-400 transition-colors duration-300 font-medium"
+                  className="hover:text-purple-400 transition-colors duration-300 font-medium text-sm md:text-base py-2 md:py-0"
                 >
                   Experience
                 </button>
@@ -110,7 +110,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => scrollToSection('projects')}
-                  className="hover:text-purple-400 transition-colors duration-300 font-medium"
+                  className="hover:text-purple-400 transition-colors duration-300 font-medium text-sm md:text-base py-2 md:py-0"
                 >
                   Projects
                 </button>
@@ -118,7 +118,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="hover:text-purple-400 transition-colors duration-300 font-medium"
+                  className="hover:text-purple-400 transition-colors duration-300 font-medium text-sm md:text-base py-2 md:py-0"
                 >
                   Contact
                 </button>
@@ -126,19 +126,19 @@ function Header() {
             </ul>
 
             {/* Social Links */}
-            <ul className="flex justify-center items-center space-x-4 py-4 md:py-0">
+            <ul className="flex justify-center items-center space-x-3 md:space-x-4 py-3 md:py-0">
               <li>
                 <a 
                   href={github} 
                   target="_blank" 
                   rel="noreferrer noopener"
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+                  className={`w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
                     scrolled 
                       ? 'bg-gray-100 text-gray-900 hover:bg-purple-100' 
                       : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
                 >
-                  <i className="fab fa-github"></i>
+                  <i className="fab fa-github text-sm md:text-base"></i>
                 </a>
               </li>
               <li>
@@ -146,27 +146,27 @@ function Header() {
                   href={linkdein} 
                   target="_blank" 
                   rel="noreferrer noopener"
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+                  className={`w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
                     scrolled 
                       ? 'bg-gray-100 text-gray-900 hover:bg-purple-100' 
                       : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
                 >
-                  <i className="fab fa-linkedin"></i>
+                  <i className="fab fa-linkedin text-sm md:text-base"></i>
                 </a>
               </li>
               <li>
                 <a 
                   href={twitter} 
                   target="_blank" 
-                  rel="noreferrer noopener"
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+                  rel="noopener noreferrer"
+                  className={`w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
                     scrolled 
                       ? 'bg-gray-100 text-gray-900 hover:bg-purple-100' 
                       : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
                 >
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-twitter text-sm md:text-base"></i>
                 </a>
               </li>
             </ul>
