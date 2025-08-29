@@ -31,18 +31,18 @@ function Contact() {
     });
 
     tl.fromTo(headerRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }
     )
     .fromTo(formRef.current,
-      { x: -100, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-      "-=0.5"
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+      "-=0.4"
     )
     .fromTo(infoRef.current,
-      { x: 100, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-      "-=0.3"
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+      "-=0.4"
     );
 
     return () => {
@@ -112,46 +112,55 @@ function Contact() {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
+      className="py-20 bg-white relative"
     >
-      {/* Background Elements */}
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-2000"></div>
+      </div>
+
+      {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16" ref={headerRef}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let's <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Connect</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Let's <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to start a project or just want to chat? I'd love to hear from you!
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6 rounded-full"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <div ref={formRef} className="space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-              <h3 className="text-2xl font-semibold text-white mb-6">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                 Send me a message
               </h3>
               
               {/* Status Messages */}
               {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
-                  <p className="text-green-400 text-center">
+                <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg">
+                  <p className="text-green-700 text-center font-medium">
                     ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
                   </p>
                 </div>
               )}
               
               {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
-                  <p className="text-red-400 text-center">
+                <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-lg">
+                  <p className="text-red-700 text-center font-medium">
                     ❌ Oops! Something went wrong. Please try again or contact me directly via email.
                   </p>
                 </div>
@@ -160,7 +169,7 @@ function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-white font-medium mb-2">
+                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
                       Your Name *
                     </label>
                     <input
@@ -170,14 +179,14 @@ function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
                       placeholder="John Doe"
                       disabled={isSubmitting}
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-white font-medium mb-2">
+                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
                       Email Address *
                     </label>
                     <input
@@ -187,7 +196,7 @@ function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
                       placeholder="john@example.com"
                       disabled={isSubmitting}
                     />
@@ -195,7 +204,7 @@ function Contact() {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-white font-medium mb-2">
+                  <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
                     Subject *
                   </label>
                   <input
@@ -205,14 +214,14 @@ function Contact() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
                     placeholder="Project Inquiry"
                     disabled={isSubmitting}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-white font-medium mb-2">
+                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
                     Message *
                   </label>
                   <textarea
@@ -222,7 +231,7 @@ function Contact() {
                     onChange={handleInputChange}
                     required
                     rows="5"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
                     placeholder="Tell me about your project..."
                     disabled={isSubmitting}
                   ></textarea>
@@ -233,7 +242,7 @@ function Contact() {
                   disabled={isSubmitting}
                   className={`w-full px-8 py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg ${
                     isSubmitting 
-                      ? 'bg-gray-500 text-gray-300 cursor-not-allowed' 
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
                       : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 hover:shadow-xl'
                   }`}
                 >
@@ -256,49 +265,49 @@ function Contact() {
           {/* Contact Information */}
           <div ref={infoRef} className="space-y-8">
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white mb-6">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                 Get in touch
               </h3>
               
               {/* Contact Details */}
               <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <i className="fas fa-envelope text-white"></i>
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <i className="fas fa-envelope text-white text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="text-white font-medium">Email</h4>
+                    <h4 className="text-gray-900 font-semibold">Email</h4>
                     <a 
                       href={`mailto:${contactDetails.email}`}
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                      className="text-purple-600 hover:text-purple-700 transition-colors duration-300 font-medium"
                     >
                       {contactDetails.email}
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <i className="fas fa-phone text-white"></i>
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <i className="fas fa-phone text-white text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="text-white font-medium">Phone</h4>
+                    <h4 className="text-gray-900 font-semibold">Phone</h4>
                     <a 
                       href={`tel:${contactDetails.phone}`}
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                      className="text-blue-600 hover:text-blue-700 transition-colors duration-300 font-medium"
                     >
                       {contactDetails.phone}
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-                    <i className="fas fa-map-marker-alt text-white"></i>
+                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-100">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <i className="fas fa-map-marker-alt text-white text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="text-white font-medium">Location</h4>
-                    <p className="text-gray-300">Lahore, Pakistan</p>
+                    <h4 className="text-gray-900 font-semibold">Location</h4>
+                    <p className="text-green-600 font-medium">Lahore, Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -306,13 +315,14 @@ function Contact() {
 
             {/* Social Links */}
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-white">Follow me</h4>
+              <h4 className="text-xl font-semibold text-gray-900">Follow me</h4>
               <div className="flex space-x-4">
                 <a 
                   href={socialMediaUrl.github} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300 border border-white/20"
+                  className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-700 hover:bg-purple-100 hover:text-purple-600 transform hover:scale-110 transition-all duration-300 border border-gray-200"
+                  title="GitHub Profile"
                 >
                   <i className="fab fa-github text-xl"></i>
                 </a>
@@ -320,7 +330,8 @@ function Contact() {
                   href={socialMediaUrl.linkdein} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300 border border-white/20"
+                  className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-700 hover:bg-blue-100 hover:text-blue-600 transform hover:scale-110 transition-all duration-300 border border-gray-200"
+                  title="LinkedIn Profile"
                 >
                   <i className="fab fa-linkedin text-xl"></i>
                 </a>
@@ -328,7 +339,8 @@ function Contact() {
                   href={socialMediaUrl.twitter} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transform hover:scale-110 transition-all duration-300 border border-white/20"
+                  className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-700 hover:bg-sky-100 hover:text-sky-600 transform hover:scale-110 transition-all duration-300 border border-gray-200"
+                  title="Twitter Profile"
                 >
                   <i className="fab fa-twitter text-xl"></i>
                 </a>
@@ -336,11 +348,11 @@ function Contact() {
             </div>
 
             {/* Quick Response */}
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
-              <h4 className="text-xl font-semibold text-white mb-3">
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">
                 Quick Response
               </h4>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-600 text-sm">
                 I typically respond to messages within 24 hours. For urgent inquiries, feel free to call me directly.
               </p>
             </div>
