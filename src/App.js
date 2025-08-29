@@ -1,25 +1,60 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
 import Header from "./Components/Header";
+import Hero from "./Components/Hero";
+import About from "./Components/About";
+import Skills from "./Components/Skills";
+import Experience from "./Components/Experience";
+import Projects from "./Components/Projects";
+import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Projects from "./Pages/Projects";
-import Technologies from "./Pages/Technologies";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import './index.css';
+
 function App() {
+  useEffect(() => {
+    // Smooth scrolling for anchor links
+    const handleAnchorClick = (e) => {
+      const href = e.target.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    // Add click event listeners to all anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', handleAnchorClick);
+    });
+
+    return () => {
+      anchorLinks.forEach(link => {
+        link.removeEventListener('click', handleAnchorClick);
+      });
+    };
+  }, []);
+
   return (
-    <Router>
+    <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/technologies" element={<Technologies />} />
-      </Routes>
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
-    </Router>
+    </div>
   );
 }
+
 export default App;

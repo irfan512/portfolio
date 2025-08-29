@@ -116,56 +116,50 @@ export const techStackDetails = {
 // Enter your Project Details here
 export const projectDetails = [
   {
-    title: "Project title 1",
+    title: "E-Commerce Mobile App",
     image: projectImage1,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
+    description: `A comprehensive Flutter-based e-commerce application with features like user authentication, product catalog, shopping cart, payment integration, and order management. Built with clean architecture and state management using Provider.`,
+    techstack: "Flutter, Dart, Provider, Firebase",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
   },
   {
-    title: "Project title 2",
+    title: "Task Management System",
     image: projectImage2,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
+    description: `A full-stack web application for project and task management. Features include user roles, project creation, task assignment, progress tracking, and real-time notifications. Built with React frontend and Laravel backend.`,
+    techstack: "React, Laravel, MySQL, Tailwind CSS",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
   },
   {
-    title: "Project title 3",
+    title: "Portfolio Website",
     image: projectImage3,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
+    description: `A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, dark/light mode, and optimized performance. Includes sections for projects, skills, and contact information.`,
+    techstack: "React, Tailwind CSS, GSAP, Framer Motion",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
   },
   {
-    title: "Project title 4",
+    title: "Restaurant Management App",
     image: projectImage4,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
+    description: `A Flutter mobile application for restaurant management with features like menu management, order processing, table reservations, and customer feedback. Includes admin panel for restaurant staff.`,
+    techstack: "Flutter, Firebase, Cloud Firestore, Provider",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
   },
   {
-    title: "Project title 5",
+    title: "Social Media Dashboard",
     image: projectImage5,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
+    description: `A comprehensive dashboard for managing multiple social media accounts. Features include post scheduling, analytics, content calendar, and engagement tracking. Built with React and Node.js backend.`,
+    techstack: "React, Node.js, Express, MongoDB",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
   },
   {
-    title: "Project title 6",
+    title: "Weather Application",
     image: projectImage6,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
+    description: `A beautiful weather app built with Flutter that provides real-time weather information, forecasts, and location-based services. Features include multiple city support, weather maps, and customizable themes.`,
+    techstack: "Flutter, OpenWeather API, Geolocation, Provider",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
   },
