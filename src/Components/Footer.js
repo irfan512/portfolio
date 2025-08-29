@@ -87,9 +87,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 text-center">
           <p className="text-gray-300">
-            © 2024 {personalDetails.name}. All rights reserved. Designed and coded with{" "}
-            <span className="text-pink-400">❤️</span> and{" "}
-            <span className="text-yellow-400">☕</span>
+            © 2024 {personalDetails.name}. All rights reserved. 
           </p>
         </div>
       </div>

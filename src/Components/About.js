@@ -108,7 +108,7 @@ function About() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Experience Highlights</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">3+</div>
+                  <div className="text-3xl font-bold text-purple-600">5+</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
@@ -116,7 +116,7 @@ function About() {
                   <div className="text-sm text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">5+</div>
+                  <div className="text-3xl font-bold text-blue-600">10+</div>
                   <div className="text-sm text-gray-600">Technologies</div>
                 </div>
                 <div className="text-center">

@@ -57,7 +57,7 @@ function Skills() {
   }, []);
 
   const techCategories = {
-    "Frontend": ["html", "css", "js", "react", "bootstrap"],
+    "Frontend": ["html", "css", "js", "react",],
     "Backend": ["php", "laravel", "mysql"],
     "Mobile": ["flutter"],
     "Tools": ["git", "github", "vscode", "postman", "figma"]
@@ -158,7 +158,7 @@ function Skills() {
                          tech === 'laravel' ? 'Laravel' : 
                          tech === 'flutter' ? 'Flutter' : 
                          tech === 'react' ? 'React' : 
-                         tech === 'bootstrap' ? 'Bootstrap' : tech}
+                         tech}
                       </h4>
                     </div>
                   </div>
