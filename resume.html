@@ -10,6 +10,23 @@
         .section-title { color: #8b5cf6; font-size: 1.3em; }
         .job { margin: 15px 0; padding: 10px; background: #f9fafb; }
         .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .download-section { text-align: center; margin-top: 20px; }
+        .download-btn {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+        }
+        .download-btn:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 92, 246, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -17,7 +34,11 @@
         <h1 class="name">Syed Irfan Haider</h1>
         <p>Software Engineer | Flutter Developer</p>
         <p>📧 irfanhaider@gmail.com | 📱 +92 3062865703 | 📍 Lahore, Pakistan</p>
-    </div>
+                <div class="download-section">
+            <a href="/portfolio/resume.pdf" download="Syed_Irfan_Haider_Resume.pdf" class="download-btn">
+                📄 Download Resume (PDF)
+            </a>
+        </div>
 
     <div class="section">
         <h2 class="section-title">Work Experience</h2>
