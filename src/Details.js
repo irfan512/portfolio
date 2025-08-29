@@ -1,7 +1,5 @@
 // Enter all your detials in this file
 // Logo images
-import logogradient from "./assets/logo.svg";
-import logo from "./assets/logo2.svg";
 // Profile Image
 import profile from "./assets/profile.jpeg";
 // Tech stack images
@@ -22,24 +20,23 @@ import laravel from "./assets/techstack/laravel.png";
 
 
 // Porject Images
-import projectImage1 from "./assets/projects/project1.jpg";
-import projectImage2 from "./assets/projects/project2.jpg";
-import projectImage3 from "./assets/projects/project3.jpg";
-import projectImage4 from "./assets/projects/project4.jpg";
-import projectImage5 from "./assets/projects/project5.jpg";
-import projectImage6 from "./assets/projects/project6.jpg";
-import projectImage7 from "./assets/projects/project6.jpg";
+import projectImage1 from "./assets/projects/project1.png";
+import projectImage2 from "./assets/projects/project2.png";
+import projectImage3 from "./assets/projects/project3.png";
+import projectImage4 from "./assets/projects/project4.png";
+import projectImage5 from "./assets/projects/project5.png";
+import projectImage6 from "./assets/projects/project6.png";
+import projectImage7 from "./assets/projects/project7.png";
+import projectImage8 from "./assets/projects/project8.png";
+
 
 // Logos
-export const logos = {
-  logogradient: logogradient,
-  logo: logo,
-};
+
 
 // Enter your Personal Details here
 export const personalDetails = {
   name: "Syed Irfan Haider",
-  tagline: "Crafting digital experiences for both Mobile and Web platforms",
+  tagline: "Transforming ideas into elegant Mobile & Web experiences.",
   img: profile,
   about: `I'm a passionate software engineer dedicated to crafting exceptional digital experiences for both mobile and web platforms. With a keen eye for detail and a commitment to excellence, I specialize in building user-friendly and high-performance applications. My journey in the world of technology has equipped me with a diverse skill set, allowing me to tackle challenges across various domains. Let's collaborate and bring your ideas to life!`,
 };
@@ -150,7 +147,7 @@ export const projectDetails = [
   {
     title: "Gocare",
     image: projectImage4,
-    description: `A telemedicine app enabling patients to consult with doctors via chat and video calls. The platform allows users to connect with healthcare professionals, schedule appointments, and receive virtual care.`,
+    description: `A telemedicine app that allows patients to easily connect with doctors for consultations, schedule appointments, and receive virtual care through chat and video calls.`,
     techstack: "Flutter, Provider, Firebase, Agora, Flutterwave",
     previewLink: "https://play.google.com/store/apps/details?id=com.gocare.gocare&pcampaignid=web_share",
     githubLink: "https://github.com",
@@ -158,7 +155,7 @@ export const projectDetails = [
   {
     title: "RevPay",
     image: projectImage5,
-    description: `RevPay-Katsina is a government-backed mobile application that simplifies and digitizes revenue collection from commercial vehicle operators in Katsina State, Nigeria. It offers a secure, user-friendly platform for managing payments, improving transparency and operational efficiency.`,
+    description: `A government-backed mobile app for Katsina State, Nigeria, that streamlines revenue collection from commercial vehicle operators, providing a secure and user-friendly payment platform.`,
     techstack: "Flutter, RiverPood, Firebase, REST APIs, Push Notification, Bluetooth Connection",
     previewLink: "https://play.google.com/store/apps/details?id=ng.revpay.app&pcampaignid=web_share",
     githubLink: "https://github.com",
@@ -166,7 +163,7 @@ export const projectDetails = [
   {
     title: "LinkOn",
     image: projectImage6,
-    description: `A social media app connects users, enabling them to share updates, photos, and messages. It features a personalized feed, profile customization, integrated messaging for private and group chats, and tools for content discovery. Users can engage through likes, comments, and shares, with privacy controls ensuring safety. The app supports multimedia uploads, offers real-time notifications, and provides analytics for content creators.`,
+    description: `A social media app that enables users to share updates, photos, and messages, with features like a personalized feed, profile customization, integrated messaging, and robust privacy controls.`,
     techstack: "Flutter, Provider, Firebase, REST APIs, Push Notification, WebSockets, Stripe API",
     previewLink: "https://apps.apple.com/pk/app/link-on/id6479557341",
     githubLink: "https://github.com",
@@ -185,7 +182,7 @@ stream matches in real-time.`,
 
   {
     title: "Bracktix",
-    image: projectImage7,
+    image: projectImage8,
     description: `A complete esports solution that combines tournament
 management with live streaming features. Users can create
 teams, manage channels, host or join tournaments, and

@@ -93,6 +93,22 @@ body {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+/* Professional text animation effects */
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-text-fade-in {
+  animation: text-fade-in 0.8s ease-out forwards;
+}
+
 /* Utility Classes */
 .max-width {
   @apply lg:mx-auto lg:px-24 xl:px-48 px-5;

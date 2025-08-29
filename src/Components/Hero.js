@@ -12,33 +12,96 @@ function Hero() {
   const h11 = useRef();
   const h12 = useRef();
   const h13 = useRef();
+  const descriptionRef = useRef();
+  const ctaRef = useRef();
 
   useEffect(() => {
     const tl = gsap.timeline();
     
-    // Initial animation
+    // Professional and clean initial animations
     tl.fromTo(h11.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      { 
+        y: 50, 
+        opacity: 0, 
+        scale: 0.95
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1,
+        duration: 0.8, 
+        ease: "power2.out" 
+      }
     )
     .fromTo(h12.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-      "-=0.5"
+      { 
+        y: 50, 
+        opacity: 0, 
+        scale: 0.95
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1,
+        duration: 0.8, 
+        ease: "power2.out" 
+      },
+      "-=0.4"
     )
     .fromTo(h13.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+      { 
+        y: 50, 
+        opacity: 0, 
+        scale: 0.95
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1,
+        duration: 0.8, 
+        ease: "power2.out" 
+      },
       "-=0.3"
     )
     .fromTo(imageRef.current,
-      { x: 100, opacity: 0, scale: 0.8 },
-      { x: 0, opacity: 1, scale: 1, duration: 1, ease: "power3.out" },
+      { 
+        x: 50, 
+        opacity: 0, 
+        scale: 0.9
+      },
+      { 
+        x: 0, 
+        opacity: 1, 
+        scale: 1,
+        duration: 0.8, 
+        ease: "power2.out" 
+      },
       "-=0.5"
     )
-    .fromTo(socialRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+    .fromTo(descriptionRef.current,
+      { 
+        y: 30, 
+        opacity: 0
+      },
+      { 
+        y: 0, 
+        opacity: 1,
+        duration: 0.6, 
+        ease: "power2.out" 
+      },
+      "-=0.4"
+    )
+    .fromTo(ctaRef.current,
+      { 
+        y: 40, 
+        opacity: 0
+      },
+      { 
+        y: 0, 
+        opacity: 1,
+        duration: 0.6, 
+        ease: "power2.out" 
+      },
       "-=0.3"
     );
 
@@ -56,6 +119,15 @@ function Hero() {
       }
     );
 
+    // Add subtle floating animation for the main heading only
+    gsap.to(h11.current, {
+      y: -5,
+      duration: 4,
+      ease: "power2.inOut",
+      yoyo: true,
+      repeat: -1
+    });
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -72,6 +144,10 @@ function Hero() {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        
+        {/* Subtle floating particles */}
+        <div className="absolute top-20 left-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse opacity-30"></div>
+        <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-blue-400 rounded-full animate-pulse opacity-30 animation-delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 lg:py-20 relative z-10">
@@ -98,13 +174,16 @@ function Hero() {
               >
                 {personalDetails.tagline}
               </h2>
-              <p className="text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0">
-                Passionate software engineer crafting exceptional digital experiences for mobile and web platforms.
+              <p 
+                ref={descriptionRef}
+                className="text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0"
+              >
+                Creative Software Engineer transforming ideas into seamless digital solutions across mobile & web platforms.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
                 href="#projects" 
                 className="px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
