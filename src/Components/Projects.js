@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projectDetails } from "../Details";
@@ -9,7 +9,6 @@ function Projects() {
   const sectionRef = useRef();
   const headerRef = useRef();
   const projectsRef = useRef();
-  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -55,17 +54,7 @@ function Projects() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [filter]);
-
-  const categories = ['all', 'mobile', 'web', 'fullstack'];
-  
-  const filteredProjects = projectDetails.filter(project => {
-    if (filter === 'all') return true;
-    if (filter === 'mobile') return project.techstack.toLowerCase().includes('flutter');
-    if (filter === 'web') return project.techstack.toLowerCase().includes('react') || project.techstack.toLowerCase().includes('html');
-    if (filter === 'fullstack') return project.techstack.toLowerCase().includes('laravel') || project.techstack.toLowerCase().includes('php');
-    return true;
-  });
+  }, []);
 
   return (
     <section 
@@ -91,28 +80,9 @@ function Projects() {
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white p-2 rounded-full shadow-lg">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setFilter(category)}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                  filter === category
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
-                }`}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Projects Grid */}
         <div ref={projectsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {projectDetails.map((project, index) => (
             <div 
               key={index} 
               className="project-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden"
