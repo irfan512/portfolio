@@ -62,9 +62,7 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-
     try {
-      // Replace these with your actual EmailJS credentials
       const result = await emailjs.send(
         'service_3i17ha1', // Replace with your EmailJS service ID
         'template_cvuk9gl', // Replace with your EmailJS template ID
@@ -74,32 +72,25 @@ function Contact() {
           subject: formData.subject,
           message: formData.message,
           to_name: 'Irfan Haider',
+          to_email: 'irfannaqviwork@gmail.com', // Add recipient email
           reply_to: formData.email,
         },
         'SmV9LXv6AarUsWaPe' // Replace with your EmailJS public key
       );
-
       console.log('Email sent successfully:', result);
       setSubmitStatus('success');
-      
-      // Reset form
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-
-      // Show success message
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-
     } catch (error) {
       console.error('Email send failed:', error);
       setSubmitStatus('error');
-      
-      // Show error message
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
