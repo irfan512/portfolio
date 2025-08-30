@@ -171,10 +171,7 @@ export const projectDetails = [
   {
     title: "B2BNet",
     image: projectImage7,
-    description: `A complete esports solution that combines tournament
-management with live streaming features. Users can create
-teams, manage channels, host or join tournaments, and
-stream matches in real-time.`,
+    description: `B2BNet is a global business directory and networking platform that helps businesses and professionals connect, collaborate, and grow. Whether you're a startup, SME, or industry expert, B2BNet offers tools to enhance visibility, manage events, and streamline communication.`,
     techstack: "Flutter, Bloc, Firebase, REST APIs, Push Notification",
     previewLink: "https://apps.apple.com/pk/app/b2bnet/id6741923823",
     githubLink: "https://github.com",
