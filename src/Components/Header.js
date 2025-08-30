@@ -183,51 +183,67 @@ function Header() {
         <nav className={`${
           !isOpen ? 'hidden' : 'block'
         } md:hidden`}>
-          <div className="py-4 space-y-2 border-t border-gray-200/50">
+          <div className={`py-4 space-y-2 border-t rounded-b-lg transition-all duration-300 ${
+            scrolled 
+              ? 'border-gray-200/50 bg-white/95 backdrop-blur-md' 
+              : 'border-white/20 bg-gray-900/95 backdrop-blur-md shadow-xl'
+          }`}>
             <button
               onClick={() => scrollToSection('home')}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
             >
               Contact
@@ -237,8 +253,10 @@ function Header() {
             <a 
               href="/portfolio/resume.pdf" 
               download="Syed_Irfan_Haider_Resume.pdf"
-              className={`w-full text-left py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-medium text-sm ${
-                scrolled ? 'text-gray-700' : 'text-white'
+              className={`w-full text-left py-2 px-4 rounded-lg transition-colors duration-300 font-medium text-sm ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' 
+                  : 'text-white hover:bg-white/10 hover:text-purple-300'
               }`}
               title="Download Resume"
             >
