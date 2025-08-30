@@ -195,6 +195,6 @@ stream matches in real-time.`,
 
 // Enter your Contact Details here
 export const contactDetails = {
-  email: "irfanhaider@gmail.com",
+  email: "irfannaqviwork@gmail.com",
   phone: "+92 3062865703",
 };
