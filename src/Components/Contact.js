@@ -103,55 +103,55 @@ function Contact() {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-20 bg-white relative"
+      className="py-24 bg-surface-50 relative"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-2000"></div>
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-primary-200 to-tertiary-200 rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-gradient-to-br from-secondary-200 to-primary-200 rounded-full mix-blend-multiply filter blur-lg animate-pulse animation-delay-2000"></div>
       </div>
 
       {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" ref={headerRef}>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Let's <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Connect</span>
+        <div className="text-center mb-20" ref={headerRef}>
+          <h2 className="text-display-small md:text-display-medium font-normal text-surface-900 mb-6">
+            Let's <span className="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-body-large text-surface-600 max-w-2xl mx-auto">
             Ready to start a project or just want to chat? I'd love to hear from you!
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-8 rounded-full opacity-80"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <div ref={formRef} className="space-y-6">
-            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white p-8 rounded-2xl border border-surface-200 shadow-elevation-2 hover:shadow-elevation-3 transition-all duration-300">
+              <h3 className="text-headline-medium font-normal text-surface-900 mb-8">
                 Send me a message
               </h3>
               
               {/* Status Messages */}
               {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg">
-                  <p className="text-green-700 text-center font-medium">
+                <div className="mb-6 p-4 bg-success-100 border border-success-300 rounded-xl">
+                  <p className="text-success-700 text-center font-medium">
                     ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
                   </p>
                 </div>
               )}
               
               {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-lg">
-                  <p className="text-red-700 text-center font-medium">
+                <div className="mb-6 p-4 bg-error-100 border border-error-300 rounded-xl">
+                  <p className="text-error-700 text-center font-medium">
                     ❌ Oops! Something went wrong. Please try again or contact me directly via email.
                   </p>
                 </div>
@@ -160,7 +160,7 @@ function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                    <label htmlFor="name" className="block text-surface-700 font-medium mb-2">
                       Your Name *
                     </label>
                     <input
@@ -170,14 +170,14 @@ function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white border border-surface-300 rounded-xl text-surface-900 placeholder-surface-500 focus:outline-none focus:ring-4 focus:ring-primary-200 focus:border-primary-600 transition-all duration-200"
                       placeholder="John Doe"
                       disabled={isSubmitting}
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                    <label htmlFor="email" className="block text-surface-700 font-medium mb-2">
                       Email Address *
                     </label>
                     <input
@@ -187,7 +187,7 @@ function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white border border-surface-300 rounded-xl text-surface-900 placeholder-surface-500 focus:outline-none focus:ring-4 focus:ring-primary-200 focus:border-primary-600 transition-all duration-200"
                       placeholder="john@example.com"
                       disabled={isSubmitting}
                     />
@@ -195,7 +195,7 @@ function Contact() {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
+                  <label htmlFor="subject" className="block text-surface-700 font-medium mb-2">
                     Subject *
                   </label>
                   <input
@@ -205,14 +205,14 @@ function Contact() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white border border-surface-300 rounded-xl text-surface-900 placeholder-surface-500 focus:outline-none focus:ring-4 focus:ring-primary-200 focus:border-primary-600 transition-all duration-200"
                     placeholder="Project Inquiry"
                     disabled={isSubmitting}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+                  <label htmlFor="message" className="block text-surface-700 font-medium mb-2">
                     Message *
                   </label>
                   <textarea
@@ -222,7 +222,7 @@ function Contact() {
                     onChange={handleInputChange}
                     required
                     rows="5"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white border border-surface-300 rounded-xl text-surface-900 placeholder-surface-500 focus:outline-none focus:ring-4 focus:ring-primary-200 focus:border-primary-600 transition-all duration-200 resize-none"
                     placeholder="Tell me about your project..."
                     disabled={isSubmitting}
                   ></textarea>
@@ -231,10 +231,10 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full px-8 py-3 font-semibold rounded-lg transition-all duration-300 shadow-lg ${
+                  className={`w-full px-8 py-4 font-medium rounded-xl transition-all duration-200 shadow-elevation-2 hover:shadow-elevation-3 focus:outline-none focus:ring-4 focus:ring-primary-200 ${
                     isSubmitting 
-                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
-                      : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 hover:shadow-xl'
+                      ? 'bg-surface-400 text-surface-600 cursor-not-allowed' 
+                      : 'bg-primary-600 text-white hover:bg-primary-700 transform hover:scale-[1.02]'
                   }`}
                 >
                   {isSubmitting ? (
@@ -256,49 +256,49 @@ function Contact() {
           {/* Contact Information */}
           <div ref={infoRef} className="space-y-8">
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-headline-medium font-normal text-surface-900 mb-8">
                 Get in touch
               </h3>
               
               {/* Contact Details */}
               <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="flex items-center space-x-4 p-4 bg-white rounded-xl border border-surface-200 shadow-elevation-1 hover:shadow-elevation-2 transition-all duration-200">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-elevation-2">
                     <i className="fas fa-envelope text-white text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="text-gray-900 font-semibold">Email</h4>
+                    <h4 className="text-surface-900 font-medium">Email</h4>
                     <a 
                       href={`mailto:${contactDetails.email}`}
-                      className="text-purple-600 hover:text-purple-700 transition-colors duration-300 font-medium"
+                      className="text-primary-600 hover:text-primary-700 transition-colors duration-200 font-medium"
                     >
                       {contactDetails.email}
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="flex items-center space-x-4 p-4 bg-white rounded-xl border border-surface-200 shadow-elevation-1 hover:shadow-elevation-2 transition-all duration-200">
+                  <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center shadow-elevation-2">
                     <i className="fas fa-phone text-white text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="text-gray-900 font-semibold">Phone</h4>
+                    <h4 className="text-surface-900 font-medium">Phone</h4>
                     <a 
                       href={`tel:${contactDetails.phone}`}
-                      className="text-blue-600 hover:text-blue-700 transition-colors duration-300 font-medium"
+                      className="text-secondary-600 hover:text-secondary-700 transition-colors duration-200 font-medium"
                     >
                       {contactDetails.phone}
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-100">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="flex items-center space-x-4 p-4 bg-white rounded-xl border border-surface-200 shadow-elevation-1 hover:shadow-elevation-2 transition-all duration-200">
+                  <div className="w-12 h-12 bg-gradient-to-br from-tertiary-500 to-tertiary-600 rounded-xl flex items-center justify-center shadow-elevation-2">
                     <i className="fas fa-map-marker-alt text-white text-lg"></i>
                   </div>
                   <div>
-                    <h4 className="text-gray-900 font-semibold">Location</h4>
-                    <p className="text-green-600 font-medium">Lahore, Pakistan</p>
+                    <h4 className="text-surface-900 font-medium">Location</h4>
+                    <p className="text-tertiary-600 font-medium">Lahore, Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -306,13 +306,13 @@ function Contact() {
 
             {/* Social Links */}
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-900">Follow me</h4>
+              <h4 className="text-title-large font-medium text-surface-900">Follow me</h4>
               <div className="flex space-x-4">
                 <a 
                   href={socialMediaUrl.github} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-700 hover:bg-purple-100 hover:text-purple-600 transform hover:scale-110 transition-all duration-300 border border-gray-200"
+                  className="w-12 h-12 bg-surface-100 rounded-xl flex items-center justify-center text-surface-700 hover:bg-primary-100 hover:text-primary-600 transform hover:scale-110 transition-all duration-200 border border-surface-200 shadow-elevation-1 hover:shadow-elevation-2"
                   title="GitHub Profile"
                 >
                   <i className="fab fa-github text-xl"></i>
@@ -321,7 +321,7 @@ function Contact() {
                   href={socialMediaUrl.linkdein} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-700 hover:bg-blue-100 hover:text-blue-600 transform hover:scale-110 transition-all duration-300 border border-gray-200"
+                  className="w-12 h-12 bg-surface-100 rounded-xl flex items-center justify-center text-surface-700 hover:bg-secondary-100 hover:text-secondary-600 transform hover:scale-110 transition-all duration-200 border border-surface-200 shadow-elevation-1 hover:shadow-elevation-2"
                   title="LinkedIn Profile"
                 >
                   <i className="fab fa-linkedin text-xl"></i>
@@ -330,7 +330,7 @@ function Contact() {
                   href={socialMediaUrl.twitter} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-700 hover:bg-sky-100 hover:text-sky-600 transform hover:scale-110 transition-all duration-300 border border-gray-200"
+                  className="w-12 h-12 bg-surface-100 rounded-xl flex items-center justify-center text-surface-700 hover:bg-tertiary-100 hover:text-tertiary-600 transform hover:scale-110 transition-all duration-200 border border-surface-200 shadow-elevation-1 hover:shadow-elevation-2"
                   title="Twitter Profile"
                 >
                   <i className="fab fa-twitter text-xl"></i>
@@ -340,11 +340,11 @@ function Contact() {
 
             {/* Resume Download */}
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-900">Download Resume</h4>
+              <h4 className="text-title-large font-medium text-surface-900">Download Resume</h4>
               <a 
                 href="/portfolio/resume.pdf" 
                 download="Syed_Irfan_Haider_Resume.pdf"
-                className="flex items-center justify-center space-x-3 w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="flex items-center justify-center space-x-3 w-full px-6 py-4 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transform hover:scale-[1.02] transition-all duration-200 shadow-elevation-2 hover:shadow-elevation-3 focus:outline-none focus:ring-4 focus:ring-primary-200"
                 title="Download Resume"
               >
                 <span>📄</span>
@@ -353,11 +353,11 @@ function Contact() {
             </div>
 
             {/* Quick Response */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100">
-              <h4 className="text-xl font-semibold text-gray-900 mb-3">
+            <div className="bg-white p-6 rounded-2xl border border-surface-200 shadow-elevation-1">
+              <h4 className="text-title-large font-medium text-surface-900 mb-3">
                 Quick Response
               </h4>
-              <p className="text-gray-600 text-sm">
+              <p className="text-surface-600 text-body-medium">
                 I typically respond to messages within 24 hours. For urgent inquiries, feel free to call me directly.
               </p>
             </div>
