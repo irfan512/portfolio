@@ -1,7 +1,7 @@
 // Enter all your detials in this file
 // Logo images
 // Profile Image
-import profile from "./assets/profile.jpeg";
+import profile from "./assets/profile.png";
 // Tech stack images
 import html from "./assets/techstack/html.png";
 import css from "./assets/techstack/css.png";
