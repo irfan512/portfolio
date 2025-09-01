@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.cb01fa37.css",
-    "main.js": "/portfolio/static/js/main.0922f73e.js",
+    "main.js": "/portfolio/static/js/main.cac4c4ff.js",
+    "static/media/profile.png": "/portfolio/static/media/profile.63433caae31834d0a798.png",
     "static/media/fa-solid-900.ttf": "/portfolio/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
     "static/media/fa-brands-400.ttf": "/portfolio/static/media/fa-brands-400.60127e352b7a11f7f1bc.ttf",
     "static/media/fa-solid-900.woff2": "/portfolio/static/media/fa-solid-900.4d986b00ff9ca3828fbd.woff2",
@@ -16,17 +17,16 @@
     "static/media/project7.png": "/portfolio/static/media/project7.df2fe172c7ca1b8f0e6c.png",
     "static/media/project5.png": "/portfolio/static/media/project5.fe8dd66e0af3dc99ab5a.png",
     "static/media/fa-regular-400.woff2": "/portfolio/static/media/fa-regular-400.21cb8f55d8e0c5b89751.woff2",
-    "static/media/profile.jpeg": "/portfolio/static/media/profile.3d02a0bc260306a2b3e2.jpeg",
     "static/media/mysql.png": "/portfolio/static/media/mysql.cf1a78a5f42266d1d9a4.png",
     "static/media/fa-v4compatibility.ttf": "/portfolio/static/media/fa-v4compatibility.c8e090db312b0bea2aa2.ttf",
     "static/media/php-logo.png": "/portfolio/static/media/php-logo.96fb8c75d8db07cffea6.png",
     "static/media/fa-v4compatibility.woff2": "/portfolio/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "index.html": "/portfolio/index.html",
     "main.cb01fa37.css.map": "/portfolio/static/css/main.cb01fa37.css.map",
-    "main.0922f73e.js.map": "/portfolio/static/js/main.0922f73e.js.map"
+    "main.cac4c4ff.js.map": "/portfolio/static/js/main.cac4c4ff.js.map"
   },
   "entrypoints": [
     "static/css/main.cb01fa37.css",
-    "static/js/main.0922f73e.js"
+    "static/js/main.cac4c4ff.js"
   ]
 }
