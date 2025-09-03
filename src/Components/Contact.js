@@ -63,42 +63,50 @@ function Contact() {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
+      // Email to Irfan (with user's message)
       const emailToYou = await emailjs.send(
         'service_3i17ha1',
         'template_cvuk9gl', 
         {
-          email_type: 'New Contact Form Message',
+          to_email: 'irfannaqvi216@gmail.com', // This goes to Irfan
           from_name: formData.name,
           from_email: formData.email,
           subject: `New Contact Form Message: ${formData.subject}`,
-          message: 'You have received a new contact form message from your portfolio website.',
-          to_name: 'Irfan Haider',
-          to_email: 'irfannaqvi216@gmail.com',
+          message: `You have received a new contact form message from your portfolio website.
+
+From: ${formData.name} (${formData.email})
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Reply directly to this email to respond to ${formData.name}.`,
           reply_to: formData.email,
-          user_name: formData.name,
-          user_email: formData.email,
-          user_subject: formData.subject,
-          user_message: formData.message,
         },
         'SmV9LXv6AarUsWaPe' 
       );
 
+      // Auto-reply to user
       const emailToUser = await emailjs.send(
         'service_3i17ha1', 
         'template_cvuk9gl', 
         {
-          email_type: 'Thank You for Contacting Me',
+          to_email: formData.email, // This goes to the user
           from_name: 'Irfan Haider',
           from_email: 'irfannaqvi216@gmail.com',
           subject: `Thank you for contacting me - ${formData.subject}`,
-          message: `Thank you for reaching out to me! I have received your message and will get back to you within 24 hours.`,
-          to_name: formData.name,
-          to_email: formData.email,
+          message: `Hi ${formData.name},
+
+Thank you for reaching out to me! I have received your message and will get back to you within 24 hours.
+
+Your message:
+"${formData.message}"
+
+Best regards,
+Irfan Haider
+Portfolio: https://irfan512.github.io/portfolio`,
           reply_to: 'irfannaqvi216@gmail.com',
-          user_name: formData.name,
-          user_email: formData.email,
-          user_subject: formData.subject,
-          user_message: formData.message,
         },
         'SmV9LXv6AarUsWaPe' 
       );
