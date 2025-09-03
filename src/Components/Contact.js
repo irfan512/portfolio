@@ -71,7 +71,7 @@ function Contact() {
           from_name: formData.name,
           from_email: formData.email,
           subject: `New Contact Form Message: ${formData.subject}`,
-          message: formData.message,
+          message: 'You have received a new contact form message from your portfolio website.',
           to_name: 'Irfan Haider',
           to_email: 'irfannaqvi216@gmail.com',
           reply_to: formData.email,
@@ -79,7 +79,6 @@ function Contact() {
           user_email: formData.email,
           user_subject: formData.subject,
           user_message: formData.message,
-          is_auto_reply: false,
         },
         'SmV9LXv6AarUsWaPe' 
       );
@@ -92,7 +91,7 @@ function Contact() {
           from_name: 'Irfan Haider',
           from_email: 'irfannaqvi216@gmail.com',
           subject: `Thank you for contacting me - ${formData.subject}`,
-          message: formData.message,
+          message: `Thank you for reaching out to me! I have received your message and will get back to you within 24 hours.`,
           to_name: formData.name,
           to_email: formData.email,
           reply_to: 'irfannaqvi216@gmail.com',
@@ -100,7 +99,6 @@ function Contact() {
           user_email: formData.email,
           user_subject: formData.subject,
           user_message: formData.message,
-          is_auto_reply: true,
         },
         'SmV9LXv6AarUsWaPe' 
       );
