@@ -63,50 +63,28 @@ function Contact() {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
-      // Email to Irfan (with user's message)
+      // Email to Irfan (with user's message) - Template 1
       const emailToYou = await emailjs.send(
         'service_3i17ha1',
-        'template_cvuk9gl', 
+        'template_irfan_receive', // Template for receiving messages
         {
-          to_email: 'irfannaqvi216@gmail.com', // This goes to Irfan
           from_name: formData.name,
           from_email: formData.email,
-          subject: `New Contact Form Message: ${formData.subject}`,
-          message: `You have received a new contact form message from your portfolio website.
-
-From: ${formData.name} (${formData.email})
-Subject: ${formData.subject}
-
-Message:
-${formData.message}
-
----
-Reply directly to this email to respond to ${formData.name}.`,
-          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
         'SmV9LXv6AarUsWaPe' 
       );
 
-      // Auto-reply to user
+      // Auto-reply to user - Template 2
       const emailToUser = await emailjs.send(
         'service_3i17ha1', 
-        'template_cvuk9gl', 
+        'template_user_autoreply', // Template for auto-reply
         {
-          to_email: formData.email, // This goes to the user
-          from_name: 'Irfan Haider',
-          from_email: 'irfannaqvi216@gmail.com',
-          subject: `Thank you for contacting me - ${formData.subject}`,
-          message: `Hi ${formData.name},
-
-Thank you for reaching out to me! I have received your message and will get back to you within 24 hours.
-
-Your message:
-"${formData.message}"
-
-Best regards,
-Irfan Haider
-Portfolio: https://irfan512.github.io/portfolio`,
-          reply_to: 'irfannaqvi216@gmail.com',
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
         'SmV9LXv6AarUsWaPe' 
       );
