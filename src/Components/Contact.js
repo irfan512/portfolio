@@ -66,7 +66,7 @@ function Contact() {
       // Email to Irfan (with user's message) - Template 1
       const emailToYou = await emailjs.send(
         'service_3i17ha1',
-        'template_irfan_receive', // Template for receiving messages
+        'template_irfan_receive',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -79,7 +79,7 @@ function Contact() {
       // Auto-reply to user - Template 2
       const emailToUser = await emailjs.send(
         'service_3i17ha1', 
-        'template_user_autoreply', // Template for auto-reply
+        'template_user_autoreply',
         {
           from_name: formData.name,
           from_email: formData.email,
