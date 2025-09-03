@@ -63,21 +63,43 @@ function Contact() {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
-      const result = await emailjs.send(
-        'service_3i17ha1', // Replace with your EmailJS service ID
-        'template_cvuk9gl', // Replace with your EmailJS template ID
+      // Send email to you (Irfan) with the user's message
+      const emailToYou = await emailjs.send(
+        'service_3i17ha1', // Your EmailJS service ID
+        'template_cvuk9gl', // Template for receiving user messages
         {
           from_name: formData.name,
           from_email: formData.email,
-          subject: formData.subject,
+          subject: `New Contact Form Message: ${formData.subject}`,
           message: formData.message,
           to_name: 'Irfan Haider',
-          to_email: 'irfannaqviwork@gmail.com', // Add recipient email
+          to_email: 'irfannaqviwork@gmail.com', // Your email to receive messages
           reply_to: formData.email,
+          user_name: formData.name,
+          user_email: formData.email,
+          user_subject: formData.subject,
+          user_message: formData.message,
         },
-        'SmV9LXv6AarUsWaPe' // Replace with your EmailJS public key
+        'SmV9LXv6AarUsWaPe' // Your EmailJS public key
       );
-      console.log('Email sent successfully:', result);
+
+      // Send auto-reply email to the user
+      const emailToUser = await emailjs.send(
+        'service_3i17ha1', // Your EmailJS service ID
+        'template_cvuk9gl', // Template for auto-reply (you can create a separate template)
+        {
+          from_name: 'Irfan Haider',
+          from_email: 'irfannaqviwork@gmail.com',
+          subject: `Thank you for contacting me - ${formData.subject}`,
+          message: `Hi ${formData.name},\n\nThank you for reaching out! I have received your message and will get back to you within 24 hours.\n\nYour message:\n"${formData.message}"\n\nBest regards,\nIrfan Haider`,
+          to_name: formData.name,
+          to_email: formData.email, // User's email for auto-reply
+          reply_to: 'irfannaqviwork@gmail.com',
+        },
+        'SmV9LXv6AarUsWaPe' // Your EmailJS public key
+      );
+
+      console.log('Emails sent successfully:', { emailToYou, emailToUser });
       setSubmitStatus('success');
       setFormData({
         name: '',
