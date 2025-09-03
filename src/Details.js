@@ -53,18 +53,11 @@ export const socialMediaUrl = {
 // Enter your Work Experience here
 export const workDetails = [
   {
-    Position: "Flutter Developer",
-    Company: `Devsinn Technologies`,
+    Position: "Senior Flutter Developer",
+    Company: `DyCoders `,
     Location: "Lahore,Pakistan",
     Type: "Full Time",
-    Duration: "Sep 2020 - Sep 2022",
-  },
-  {
-    Position: "Mobile Developer Team Lead",
-    Company: `Socioon Limited`,
-    Location: "Lahore,Pakistan",
-    Type: "Full Time",
-    Duration: "Sep 2022 - Oct 2023",
+    Duration: "Nov 2024 - Present",
   },
   {
     Position: "Senior Flutter Developer",
@@ -74,11 +67,18 @@ export const workDetails = [
     Duration: "Oct 2023 - Nov 2024",
   },
   {
-    Position: "Senior Flutter Developer",
-    Company: `DyCoders `,
+    Position: "Mobile Developer Team Lead",
+    Company: `Socioon Limited`,
     Location: "Lahore,Pakistan",
     Type: "Full Time",
-    Duration: "Nov 2024 - Present",
+    Duration: "Sep 2022 - Oct 2023",
+  },
+  {
+    Position: "Flutter Developer",
+    Company: `Devsinn Technologies`,
+    Location: "Lahore,Pakistan",
+    Type: "Full Time",
+    Duration: "Sep 2020 - Sep 2022",
   },
 ];
 

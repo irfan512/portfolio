@@ -134,22 +134,14 @@ function Projects() {
                 </div>
                 
                 {/* Project Links */}
-                <div className="flex gap-3 pt-4">
+                <div className="pt-4">
                   <a 
                     href={project.previewLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex-1 btn-primary text-center text-sm py-2"
+                    className="w-full btn-primary text-center text-sm py-2 block"
                   >
                     Live Preview
-                  </a>
-                  <a 
-                    href={project.githubLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex-1 btn-outlined text-center text-sm py-2"
-                  >
-                    View Code
                   </a>
                 </div>
               </div>
