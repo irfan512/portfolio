@@ -63,40 +63,46 @@ function Contact() {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
-      // Send email to you (Irfan) with the user's message
       const emailToYou = await emailjs.send(
-        'service_3i17ha1', // Your EmailJS service ID
-        'template_cvuk9gl', // Template for receiving user messages
+        'service_3i17ha1',
+        'template_cvuk9gl', 
         {
+          email_type: 'New Contact Form Message',
           from_name: formData.name,
           from_email: formData.email,
           subject: `New Contact Form Message: ${formData.subject}`,
           message: formData.message,
           to_name: 'Irfan Haider',
-          to_email: 'irfannaqviwork@gmail.com', // Your email to receive messages
+          to_email: 'irfannaqvi216@gmail.com',
           reply_to: formData.email,
           user_name: formData.name,
           user_email: formData.email,
           user_subject: formData.subject,
           user_message: formData.message,
+          is_auto_reply: false,
         },
-        'SmV9LXv6AarUsWaPe' // Your EmailJS public key
+        'SmV9LXv6AarUsWaPe' 
       );
 
-      // Send auto-reply email to the user
       const emailToUser = await emailjs.send(
-        'service_3i17ha1', // Your EmailJS service ID
-        'template_cvuk9gl', // Template for auto-reply (you can create a separate template)
+        'service_3i17ha1', 
+        'template_cvuk9gl', 
         {
+          email_type: 'Thank You for Contacting Me',
           from_name: 'Irfan Haider',
-          from_email: 'irfannaqviwork@gmail.com',
+          from_email: 'irfannaqvi216@gmail.com',
           subject: `Thank you for contacting me - ${formData.subject}`,
-          message: `Hi ${formData.name},\n\nThank you for reaching out! I have received your message and will get back to you within 24 hours.\n\nYour message:\n"${formData.message}"\n\nBest regards,\nIrfan Haider`,
+          message: formData.message,
           to_name: formData.name,
-          to_email: formData.email, // User's email for auto-reply
-          reply_to: 'irfannaqviwork@gmail.com',
+          to_email: formData.email,
+          reply_to: 'irfannaqvi216@gmail.com',
+          user_name: formData.name,
+          user_email: formData.email,
+          user_subject: formData.subject,
+          user_message: formData.message,
+          is_auto_reply: true,
         },
-        'SmV9LXv6AarUsWaPe' // Your EmailJS public key
+        'SmV9LXv6AarUsWaPe' 
       );
 
       console.log('Emails sent successfully:', { emailToYou, emailToUser });
