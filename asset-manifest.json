@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.6143c119.css",
-    "main.js": "/portfolio/static/js/main.2e6ee3b1.js",
+    "main.js": "/portfolio/static/js/main.c7565bd2.js",
     "static/media/profile.png": "/portfolio/static/media/profile.63433caae31834d0a798.png",
     "static/media/fa-solid-900.ttf": "/portfolio/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
     "static/media/fa-brands-400.ttf": "/portfolio/static/media/fa-brands-400.60127e352b7a11f7f1bc.ttf",
@@ -18,15 +18,17 @@
     "static/media/project5.png": "/portfolio/static/media/project5.fe8dd66e0af3dc99ab5a.png",
     "static/media/fa-regular-400.woff2": "/portfolio/static/media/fa-regular-400.21cb8f55d8e0c5b89751.woff2",
     "static/media/mysql.png": "/portfolio/static/media/mysql.cf1a78a5f42266d1d9a4.png",
+    "static/media/Kotlin.png": "/portfolio/static/media/Kotlin.e561bb24367c5fce5fcd.png",
+    "static/media/apple.png": "/portfolio/static/media/apple.1511c3d419cb16aec154.png",
     "static/media/fa-v4compatibility.ttf": "/portfolio/static/media/fa-v4compatibility.c8e090db312b0bea2aa2.ttf",
     "static/media/php-logo.png": "/portfolio/static/media/php-logo.96fb8c75d8db07cffea6.png",
     "static/media/fa-v4compatibility.woff2": "/portfolio/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "index.html": "/portfolio/index.html",
     "main.6143c119.css.map": "/portfolio/static/css/main.6143c119.css.map",
-    "main.2e6ee3b1.js.map": "/portfolio/static/js/main.2e6ee3b1.js.map"
+    "main.c7565bd2.js.map": "/portfolio/static/js/main.c7565bd2.js.map"
   },
   "entrypoints": [
     "static/css/main.6143c119.css",
-    "static/js/main.2e6ee3b1.js"
+    "static/js/main.c7565bd2.js"
   ]
 }
