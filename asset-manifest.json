@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.3d37cc61.css",
+    "main.js": "/portfolio/static/js/main.12430489.js",
+    "static/media/fsms.jpg": "/portfolio/static/media/fsms.564a360fbb86b7993418.jpg",
+    "static/media/calling-all-kids.jpg": "/portfolio/static/media/calling-all-kids.9b2a322a7b77ca958bde.jpg",
+    "static/media/tegal.jpg": "/portfolio/static/media/tegal.ef7e156acd2a51193e96.jpg",
+    "static/media/project2.png": "/portfolio/static/media/project2.122050593141c089c8a6.png",
+    "static/media/profile-640.jpg": "/portfolio/static/media/profile-640.5bc43d26fdf555dd9684.jpg",
+    "static/media/project1.png": "/portfolio/static/media/project1.282a0b848165e0075dfa.png",
+    "static/media/project8.png": "/portfolio/static/media/project8.0f15c7144694c4373b15.png",
+    "static/media/project6.png": "/portfolio/static/media/project6.7b36cc1f95eb0bc1e765.png",
+    "static/media/project4.png": "/portfolio/static/media/project4.bd398132a373d5732951.png",
+    "static/media/project3.png": "/portfolio/static/media/project3.aecba766c8dd4ab88195.png",
+    "static/media/project7.png": "/portfolio/static/media/project7.df2fe172c7ca1b8f0e6c.png",
+    "static/media/project5.png": "/portfolio/static/media/project5.fe8dd66e0af3dc99ab5a.png",
+    "index.html": "/portfolio/index.html",
+    "main.3d37cc61.css.map": "/portfolio/static/css/main.3d37cc61.css.map",
+    "main.12430489.js.map": "/portfolio/static/js/main.12430489.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d37cc61.css",
+    "static/js/main.12430489.js"
+  ]
+}
