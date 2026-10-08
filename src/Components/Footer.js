@@ -6,15 +6,18 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line bg-surface">
-      <div className="page py-12 grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
+    <footer className="on-dark bg-ink text-haze border-t border-white/10">
+      <div className="page py-10 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
         <div>
-          <p className="font-bold text-ink">{profile.name}</p>
+          <p className="font-bold text-white">{profile.name}</p>
           <p className="mt-1 text-[15px]">
             {profile.role}. {profile.discipline}.
           </p>
-          <p className="mt-3 text-[15px]">
-            <a href={`mailto:${contactDetails.email}`} className="link">
+          <p className="mt-2 text-[15px] wrap-anywhere">
+            <a
+              href={`mailto:${contactDetails.email}`}
+              className="link text-mist decoration-white/30 hover:text-white hover:decoration-white"
+            >
               {contactDetails.email}
             </a>
           </p>
@@ -22,23 +25,26 @@ function Footer() {
 
         <div className="md:text-right">
           <nav aria-label="Footer">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
+            <ul className="flex flex-wrap gap-x-6 md:justify-end">
               {navLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={`#${link.id}`} className="inline-flex items-center py-2 text-[15px] hover:text-ink transition-colors">
+                  <a
+                    href={`#${link.id}`}
+                    className="inline-flex items-center min-h-[44px] text-[15px] text-mist hover:text-white transition-colors"
+                  >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="mt-3 flex gap-1 md:justify-end">
+          <div className="mt-1 flex gap-1 -ml-2.5 md:ml-0 md:-mr-2.5 md:justify-end">
             <a
               href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub profile"
-              className="inline-flex items-center justify-center w-11 h-11 -m-1.5 rounded-lg text-slate hover:text-ink hover:bg-canvas transition-colors"
+              aria-label="GitHub profile (opens in a new tab)"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-mist hover:text-white hover:bg-white/5 transition-colors"
             >
               <GithubIcon />
             </a>
@@ -46,8 +52,8 @@ function Footer() {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              className="inline-flex items-center justify-center w-11 h-11 -m-1.5 rounded-lg text-slate hover:text-ink hover:bg-canvas transition-colors"
+              aria-label="LinkedIn profile (opens in a new tab)"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-mist hover:text-white hover:bg-white/5 transition-colors"
             >
               <LinkedinIcon />
             </a>
@@ -55,8 +61,8 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-line">
-        <p className="page py-5 text-sm text-subtle">
+      <div className="border-t border-white/10">
+        <p className="page py-5 text-sm">
           &copy; {year} {profile.name}. Based in {profile.location}.
         </p>
       </div>

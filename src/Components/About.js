@@ -3,9 +3,9 @@ import { about, profile } from "../Details";
 
 function About() {
   return (
-    <section id="about" className="section border-t border-line">
+    <section id="about" className="section bg-surface border-t border-line">
       <div className="page grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16">
-        <div>
+        <div data-reveal>
           <h2 className="h2">About</h2>
           <div className="mt-6 space-y-5 max-w-prose">
             {about.paragraphs.map((paragraph, i) => (
@@ -14,13 +14,21 @@ function About() {
           </div>
         </div>
 
-        <aside className="lg:pt-20">
-          <div className="panel p-6">
-            <h3 className="text-base">Education</h3>
-            <p className="mt-2 text-[15px]">{about.education}</p>
-            <h3 className="text-base mt-6">Based in</h3>
-            <p className="mt-2 text-[15px]">{profile.location}</p>
-          </div>
+        <aside data-reveal className="lg:pt-16">
+          <dl className="rounded-xl bg-tint p-6 space-y-5">
+            <div>
+              <dt className="text-[14px] font-semibold text-accent">Education</dt>
+              <dd className="mt-1 text-[16px] text-ink">{about.education}</dd>
+            </div>
+            <div>
+              <dt className="text-[14px] font-semibold text-accent">Based in</dt>
+              <dd className="mt-1 text-[16px] text-ink">{profile.location}</dd>
+            </div>
+            <div>
+              <dt className="text-[14px] font-semibold text-accent">Experience</dt>
+              <dd className="mt-1 text-[16px] text-ink">{profile.experience}</dd>
+            </div>
+          </dl>
         </aside>
       </div>
     </section>

@@ -52,3 +52,37 @@ export const MailIcon = (props) => (
     <path d="m3.5 7 8.5 6 8.5-6" />
   </svg>
 );
+
+export const ChevronIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="16" height="16" {...base} {...props}>
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+);
+
+export const PhoneDeviceIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...props}>
+    <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+    <path d="M11 18.5h2" />
+  </svg>
+);
+
+export const BrowserIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...props}>
+    <rect x="3" y="4" width="18" height="16" rx="2.5" />
+    <path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 13h5M8 16h8" />
+  </svg>
+);
+
+export const ChipIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...props}>
+    <rect x="7" y="7" width="10" height="10" rx="2" />
+    <path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" />
+  </svg>
+);
+
+export const WrenchIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...props}>
+    <path d="M14.5 6.5a4 4 0 0 0 4.9 4.9l-8.6 8.6a2.1 2.1 0 0 1-3-3l8.6-8.6a4 4 0 0 1-1.9-1.9Z" />
+    <path d="M14.5 6.5 17 4l3 3-2.5 2.5" />
+  </svg>
+);

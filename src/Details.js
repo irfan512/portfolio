@@ -55,7 +55,9 @@ export const hero = {
   support: ["5+ years of experience", "Lahore, Pakistan"],
 };
 
-// Four featured projects. `link` is omitted where there is no public destination.
+// Four featured projects. `points` are shown by default; `details` holds the
+// longer explanation behind the "Project details" control. Omit `link` when
+// there is no public destination, and omit `details` when there is nothing more to say.
 export const featuredProjects = [
   {
     name: "FSMS",
@@ -63,21 +65,30 @@ export const featuredProjects = [
     image: imgFsms,
     alt: "FSMS dashboard on a laptop beside two mobile screens showing maintenance tasks",
     summary:
-      "Facility teams handle maintenance complaints and tasks across many sites. FSMS gives field staff a Flutter mobile app and coordinators a web admin platform, with real-time dashboards and task tracking in one system.",
-    contribution:
-      "I lead Flutter development of the mobile app and built the web admin platform. I also designed the AI layer that gives each complaint or task its own chat agent, where a language model supports routing, escalation and resolution while people stay in control of the outcome.",
-    tech: ["Flutter", "Web admin platform", "LLM integration", "Real-time dashboards"],
+      "Facility management platform with a Flutter app for field staff and a web admin platform for coordinators.",
+    points: [
+      "Lead Flutter development of the mobile app",
+      "Built the web admin platform, including real-time dashboards and task tracking",
+      "Designed the AI layer that attaches a chat agent to each complaint or task",
+    ],
+    details:
+      "Facility teams handle maintenance complaints and tasks across many sites, and FSMS brings field staff and coordinators into one system. In the AI layer, a language model supports routing, escalation and resolution for each complaint or task, while people stay in control of the outcome.",
+    tech: ["Flutter", "Web admin", "LLM integration", "Real-time dashboards"],
   },
   {
     name: "Calling All Kids",
     category: "Consumer mobile app",
     image: imgCallingAllKids,
     alt: "Calling All Kids app screens showing animated characters and a voice call interface",
-    summary:
-      "A parenting app where children hold spoken conversations with animated characters instead of tapping through a menu.",
-    contribution:
-      "I built the Flutter application and integrated the speech recognition and natural-language layer that turns what a child says into a character response, along with the audio handling and app flows around it.",
-    tech: ["Flutter", "Speech recognition", "Natural-language features", "Mobile audio"],
+    summary: "A parenting app where children hold spoken conversations with animated characters.",
+    points: [
+      "Built the Flutter application and its app flows",
+      "Integrated speech recognition and natural-language features",
+      "Built the real-time voice conversation experience",
+    ],
+    details:
+      "The core interaction is spoken rather than tapped: a child talks, the app recognises the speech, and a character replies. My work covered the application around that loop, from the conversation screens to the speech and language integration.",
+    tech: ["Flutter", "Speech recognition", "Natural language", "Real-time voice"],
     link: {
       href: "https://play.google.com/store/apps/details?id=com.callingAllKids.cak&hl=en",
       label: "View on Google Play",
@@ -89,9 +100,13 @@ export const featuredProjects = [
     image: imgIngage,
     alt: "INGAGE GG app screens showing tournament brackets and player profiles",
     summary:
-      "An e-sports platform for running tournaments: team creation, elimination brackets, a prize-pool wallet and player career profiles.",
-    contribution:
-      "I led Flutter development of the mobile client and implemented the live match tracking and notification features against WebSocket and Firebase services, working as part of the wider platform team.",
+      "An e-sports platform for tournaments, with team creation, brackets, a prize-pool wallet and player career profiles.",
+    points: [
+      "Led Flutter development of the mobile client",
+      "Implemented live match tracking and notifications with WebSockets and Firebase",
+    ],
+    details:
+      "I worked as part of the wider platform team. The mobile client was my area of responsibility, connecting to the platform's tournament, wallet and real-time services.",
     tech: ["Flutter", "BLoC", "Firebase", "WebSockets", "Stripe"],
     link: {
       href: "https://play.google.com/store/apps/details?id=com.ingage.gg&pcampaignid=web_share",
@@ -103,10 +118,12 @@ export const featuredProjects = [
     category: "Telemedicine app",
     image: imgGocare,
     alt: "goCare app screens showing doctor listings and a consultation view",
-    summary:
-      "A telemedicine app that connects patients with doctors for online consultations rather than a wait at the clinic.",
-    contribution:
-      "I built the Flutter app covering appointments, chat and the consultation flow, and integrated real-time voice and video alongside in-app payments.",
+    summary: "A telemedicine app that connects patients with doctors for online consultations.",
+    points: [
+      "Built the Flutter app: appointments, chat and the consultation flow",
+      "Integrated real-time voice and video with Agora",
+      "Integrated in-app payments with Flutterwave",
+    ],
     tech: ["Flutter", "Firebase", "Agora", "Flutterwave"],
     link: {
       href: "https://play.google.com/store/apps/details?id=com.gocare.gocare&pcampaignid=web_share",
@@ -185,6 +202,7 @@ export const moreProjects = [
 export const services = [
   {
     title: "Mobile application development",
+    icon: "mobile",
     audience: "Founders and teams who need one product on both Android and iOS.",
     delivers:
       "Cross-platform Flutter apps end to end: interface work, state management, API integration, authentication, push notifications and store release.",
@@ -192,6 +210,7 @@ export const services = [
   },
   {
     title: "Web applications and admin platforms",
+    icon: "web",
     audience: "Teams who need to run and support the product behind the app.",
     delivers:
       "Dashboards and internal tools for managing users, tasks and content, built against the same APIs as the mobile client so both stay in step.",
@@ -199,6 +218,7 @@ export const services = [
   },
   {
     title: "Python and applied AI integration",
+    icon: "ai",
     audience: "Teams adding AI features to a product that already exists.",
     delivers:
       "Hosted language models and speech services connected to real application flows, with the Python and API work that makes a model useful rather than a demo.",
@@ -206,6 +226,7 @@ export const services = [
   },
   {
     title: "Existing product improvements",
+    icon: "improve",
     audience: "Teams with an app already in production.",
     delivers:
       "Adding features to a live codebase, fixing defects, improving structure and maintainability, refining interfaces and supporting releases.",
@@ -216,27 +237,25 @@ export const services = [
 export const appliedAi = {
   heading: "AI features built into useful software.",
   intro:
-    "Most of my AI work is integration. The interesting problem is rarely the model itself; it is everything around it that decides whether a feature is dependable enough to put in front of users.",
+    "My applied AI work focuses on connecting models and services to real applications, including conversational interfaces, speech features, and workflow automation.",
   items: [
     {
-      title: "Language-model features in applications",
-      body: "Conversational support attached to a specific workflow, such as the per-task chat agents in FSMS, where the model drafts and suggests while a person stays responsible for the outcome.",
+      title: "Conversational features in applications",
+      body: "Language-model support attached to a specific workflow, such as the per-task chat agents in FSMS, where the model assists and a person stays responsible for the outcome.",
     },
     {
       title: "Speech and natural-language interaction",
       body: "Spoken interaction inside a mobile app, including the child-to-character conversations in Calling All Kids.",
     },
     {
-      title: "Python for integration and automation",
-      body: "The service integration, data handling and automation that connects a model to the rest of a product.",
+      title: "Workflow automation with Python",
+      body: "The service integration and data handling that connect a model to the rest of a product and its operations.",
     },
     {
-      title: "Application orchestration",
-      body: "Prompt and state handling, API calls, error paths and sensible fallbacks for when a model is slow, wrong or unavailable.",
+      title: "Dependable integration",
+      body: "Prompt and state handling, API calls, error paths and fallbacks for when a model is slow, wrong or unavailable.",
     },
   ],
-  scope:
-    "To be precise about scope: this work uses hosted models through APIs and integrates them into products. I have not trained or fine-tuned models, and retrieval pipelines and vector databases are not part of the production work shown here.",
 };
 
 export const workDetails = [

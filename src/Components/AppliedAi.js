@@ -1,25 +1,21 @@
 import React from "react";
 import { appliedAi } from "../Details";
+import SectionHeading from "./SectionHeading";
 
 function AppliedAi() {
   return (
-    <section id="ai" className="section border-t border-line">
-      <div className="page">
-        <h2 className="h2 max-w-[20ch]">{appliedAi.heading}</h2>
-        <p className="lead mt-4">{appliedAi.intro}</p>
+    <section id="ai" className="section bg-surface">
+      <div className="page grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+        <SectionHeading title={appliedAi.heading} intro={appliedAi.intro} titleClassName="max-w-[16ch]" />
 
-        <div className="mt-12 grid gap-x-12 gap-y-8 md:grid-cols-2">
+        <ol data-reveal className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:pt-2">
           {appliedAi.items.map((item) => (
-            <div key={item.title} className="border-t-2 border-accent pt-4">
-              <h3 className="text-lg">{item.title}</h3>
-              <p className="mt-2 text-[15px]">{item.body}</p>
-            </div>
+            <li key={item.title} className="border-t-2 border-accent pt-4">
+              <h3 className="text-[1.125rem]">{item.title}</h3>
+              <p className="mt-2 text-[16px] leading-relaxed">{item.body}</p>
+            </li>
           ))}
-        </div>
-
-        <p className="mt-12 p-5 bg-accent-soft rounded-xl text-[15px] text-ink max-w-prose">
-          {appliedAi.scope}
-        </p>
+        </ol>
       </div>
     </section>
   );

@@ -1,35 +1,42 @@
 import React from "react";
 import { services } from "../Details";
+import SectionHeading from "./SectionHeading";
+import { PhoneDeviceIcon, BrowserIcon, ChipIcon, WrenchIcon } from "./Icons";
+
+const ICONS = { mobile: PhoneDeviceIcon, web: BrowserIcon, ai: ChipIcon, improve: WrenchIcon };
 
 function Services() {
   return (
-    <section id="services" className="section border-t border-line bg-surface">
+    <section id="services" className="section bg-tint">
       <div className="page">
-        <h2 className="h2">Services</h2>
-        <p className="lead mt-4">
-          How I usually work with clients, and the projects on this page that show each one.
-        </p>
+        <SectionHeading
+          title="Services"
+          intro="How I usually work with clients, and the projects on this page that show each one."
+        />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
-            <article key={service.title} className="border border-line rounded-xl p-6 bg-canvas">
-              <h3 className="text-xl">{service.title}</h3>
-              <dl className="mt-4 space-y-3 text-[15px]">
+        <div data-reveal className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+          {services.map((service) => {
+            const Icon = ICONS[service.icon];
+            return (
+              <article key={service.title} className="flex gap-4">
+                <span
+                  aria-hidden="true"
+                  className="shrink-0 w-11 h-11 rounded-xl bg-surface border border-line text-accent inline-flex items-center justify-center"
+                >
+                  {Icon && <Icon />}
+                </span>
                 <div>
-                  <dt className="font-semibold text-ink">Useful for</dt>
-                  <dd>{service.audience}</dd>
+                  <h3 className="text-[1.25rem]">{service.title}</h3>
+                  <p className="mt-1 text-[15px] text-subtle">{service.audience}</p>
+                  <p className="mt-3 text-[16px] leading-relaxed">{service.delivers}</p>
+                  <p className="mt-3 text-[15px]">
+                    <span className="font-semibold text-ink">Shown in: </span>
+                    {service.proof}
+                  </p>
                 </div>
-                <div>
-                  <dt className="font-semibold text-ink">What I deliver</dt>
-                  <dd>{service.delivers}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-ink">Shown in</dt>
-                  <dd>{service.proof}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

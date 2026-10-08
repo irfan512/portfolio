@@ -1,4 +1,5 @@
 import React from "react";
+import useScrollReveal from "./hooks/useScrollReveal";
 import Nav from "./Components/Nav";
 import Hero from "./Components/Hero";
 import Work from "./Components/Work";
@@ -12,6 +13,8 @@ import Footer from "./Components/Footer";
 import "./index.css";
 
 function App() {
+  useScrollReveal();
+
   return (
     <>
       <a

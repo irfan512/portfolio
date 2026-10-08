@@ -75,41 +75,47 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="section border-t border-line">
+    <section id="contact" className="on-dark section bg-ink text-mist">
       <div className="page grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-        <div>
-          <h2 className="h2 max-w-[18ch]">{contactCopy.heading}</h2>
-          <p className="lead mt-4">{contactCopy.body}</p>
+        <div data-reveal>
+          <h2 className="h2 text-white max-w-[16ch] lg:text-[2.75rem]">{contactCopy.heading}</h2>
+          <p className="mt-4 text-lg text-mist max-w-prose">{contactCopy.body}</p>
 
           <dl className="mt-8 space-y-5">
             <div>
-              <dt className="text-[15px] text-subtle">Email</dt>
-              <dd className="text-lg">
-                <a href={`mailto:${contactDetails.email}`} className="link">
+              <dt className="text-[14px] font-semibold text-haze">Email</dt>
+              <dd className="text-lg wrap-anywhere">
+                <a
+                  href={`mailto:${contactDetails.email}`}
+                  className="link text-white decoration-white/40 hover:text-lilac hover:decoration-lilac"
+                >
                   {contactDetails.email}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-[15px] text-subtle">Phone</dt>
+              <dt className="text-[14px] font-semibold text-haze">Phone</dt>
               <dd>
-                <a href={`tel:${contactDetails.phoneHref}`} className="link">
+                <a
+                  href={`tel:${contactDetails.phoneHref}`}
+                  className="link text-white decoration-white/40 hover:text-lilac hover:decoration-lilac"
+                >
                   {contactDetails.phone}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-[15px] text-subtle">Location</dt>
-              <dd className="text-ink">{contactDetails.location}</dd>
+              <dt className="text-[14px] font-semibold text-haze">Location</dt>
+              <dd className="text-white">{contactDetails.location}</dd>
             </div>
           </dl>
 
-          <div className="mt-8 flex gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-lg border border-line bg-surface text-ink text-[15px] font-medium hover:border-slate transition-colors"
+              className="btn min-h-[48px] px-4 text-[15px] border border-white/20 text-white hover:border-white/50 hover:bg-white/5"
             >
               <GithubIcon /> GitHub
             </a>
@@ -117,14 +123,14 @@ function Contact() {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-lg border border-line bg-surface text-ink text-[15px] font-medium hover:border-slate transition-colors"
+              className="btn min-h-[48px] px-4 text-[15px] border border-white/20 text-white hover:border-white/50 hover:bg-white/5"
             >
               <LinkedinIcon /> LinkedIn
             </a>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate className="panel p-6 sm:p-8">
+        <form data-reveal onSubmit={handleSubmit} noValidate className="panel p-5 sm:p-8 text-slate shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)]">
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="label">
@@ -216,18 +222,18 @@ function Contact() {
             )}
           </div>
 
-          <button type="submit" disabled={isSubmitting} className="btn-primary mt-6 w-full sm:w-auto disabled:opacity-70">
+          <button type="submit" disabled={isSubmitting} className="btn-primary mt-6 w-full sm:w-auto disabled:opacity-70 disabled:pointer-events-none">
             {isSubmitting ? "Sending message" : "Send message"}
           </button>
 
           <div aria-live="polite" className="empty:hidden">
             {status === "success" && (
-              <p className="mt-4 p-3 rounded-lg bg-accent-soft text-ink text-[15px]">
+              <p className="appear mt-4 p-3 rounded-lg bg-accent-soft text-ink text-[15px]">
                 Message sent. It has reached my inbox and I will get back to you.
               </p>
             )}
             {status === "error" && (
-              <p className="mt-4 p-3 rounded-lg border border-red-300 bg-red-50 text-red-800 text-[15px]">
+              <p className="appear mt-4 p-3 rounded-lg border border-red-300 bg-red-50 text-red-800 text-[15px]">
                 The message could not be sent. Your text is still here, so you can try again, or email me
                 directly at{" "}
                 <a href={`mailto:${contactDetails.email}`} className="underline font-medium">
