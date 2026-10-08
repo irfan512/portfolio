@@ -1,197 +1,337 @@
-// Enter all your detials in this file
-// Logo images
-// Profile Image
-import profile from "./assets/profile.png";
-// Tech stack images
-import html from "./assets/techstack/html.png";
-import css from "./assets/techstack/css.png";
-import js from "./assets/techstack/js.png";
-import react from "./assets/techstack/react.png";
-import bootstrap from "./assets/techstack/bootstrap.png";
-import vscode from "./assets/techstack/vscode.png";
-import github from "./assets/techstack/github.png";
-import git from "./assets/techstack/git.png";
-import php from "./assets/techstack/php-logo.png";
-import postman from "./assets/techstack/postman.png";
-import figma from "./assets/techstack/figma.png";
-import mysql from "./assets/techstack/mysql.png";
-import flutter from "./assets/techstack/flutter.png";
-import laravel from "./assets/techstack/laravel.png";
+// ---------------------------------------------------------------------------
+// All site content lives here. Components only render what this file exports,
+// so copy and project data can be edited without touching layout code.
+// ---------------------------------------------------------------------------
 
+import portrait from "./assets/profile-640.jpg";
+import imgFsms from "./assets/projects/fsms.jpg";
+import imgCallingAllKids from "./assets/projects/calling-all-kids.jpg";
+import imgTegal from "./assets/projects/tegal.jpg";
+import imgIngage from "./assets/projects/project1.png";
+import imgBuyerBoard from "./assets/projects/project2.png";
+import imgRaabta from "./assets/projects/project3.png";
+import imgGocare from "./assets/projects/project4.png";
+import imgRevPay from "./assets/projects/project5.png";
+import imgLinkOn from "./assets/projects/project6.png";
+import imgB2BNet from "./assets/projects/project7.png";
+import imgBracktix from "./assets/projects/project8.png";
 
-// Porject Images
-import projectImage1 from "./assets/projects/project1.png";
-import projectImage2 from "./assets/projects/project2.png";
-import projectImage3 from "./assets/projects/project3.png";
-import projectImage4 from "./assets/projects/project4.png";
-import projectImage5 from "./assets/projects/project5.png";
-import projectImage6 from "./assets/projects/project6.png";
-import projectImage7 from "./assets/projects/project7.png";
-import projectImage8 from "./assets/projects/project8.png";
-
-
-// Logos
-
-
-// Enter your Personal Details here
-export const personalDetails = {
-  name: "Syed Irfan Haider",
-  tagline: "Transforming ideas into elegant Mobile & Web experiences.",
-  img: profile,
-  about: `I'm a passionate software engineer dedicated to crafting exceptional digital experiences for both mobile and web platforms. With a keen eye for detail and a commitment to excellence, I specialize in building user-friendly and high-performance applications. My journey in the world of technology has equipped me with a diverse skill set, allowing me to tackle challenges across various domains. Let's collaborate and bring your ideas to life!`,
+export const profile = {
+  name: "Irfan Haider",
+  role: "Senior Software Developer",
+  discipline: "Mobile, Web & Applied AI",
+  location: "Lahore, Pakistan",
+  experience: "5+ years of experience",
+  portrait,
+  siteUrl: "https://irfan512.github.io/portfolio/",
 };
 
+export const contactDetails = {
+  email: "irfannaqvi216@gmail.com",
+  // Already published on the existing site, so it is kept. Email is primary.
+  phone: "+92 306 286 5703",
+  phoneHref: "+923062865703",
+  location: "Lahore, Pakistan",
+};
 
-// Enter your Social Media URLs here
-export const socialMediaUrl = {
-  linkdein: "https://www.linkedin.com/in/syed-irfan-haider-248109263",
+export const socialLinks = {
   github: "https://github.com/irfan512",
-  twitter: "https://x.com/Syedfani99",
-  instagram: "https://www.instagram.com/",
+  linkedin: "https://www.linkedin.com/in/syed-irfan-haider-248109263",
 };
 
-// Enter your Work Experience here
+export const navLinks = [
+  { id: "work", label: "Work" },
+  { id: "services", label: "Services" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+
+export const hero = {
+  eyebrow: "Senior Software Developer",
+  headline: "I build mobile apps, web platforms, and AI-powered software.",
+  body: "I help businesses turn product ideas into reliable software, from cross-platform mobile apps and web dashboards to Python-based AI integrations.",
+  primaryCta: { label: "View selected work", href: "#work" },
+  secondaryCta: { label: "Discuss a project", href: "#contact" },
+  support: ["5+ years of experience", "Lahore, Pakistan"],
+};
+
+// Four featured projects. `link` is omitted where there is no public destination.
+export const featuredProjects = [
+  {
+    name: "FSMS",
+    category: "Enterprise mobile and web platform",
+    image: imgFsms,
+    alt: "FSMS dashboard on a laptop beside two mobile screens showing maintenance tasks",
+    summary:
+      "Facility teams handle maintenance complaints and tasks across many sites. FSMS gives field staff a Flutter mobile app and coordinators a web admin platform, with real-time dashboards and task tracking in one system.",
+    contribution:
+      "I lead Flutter development of the mobile app and built the web admin platform. I also designed the AI layer that gives each complaint or task its own chat agent, where a language model supports routing, escalation and resolution while people stay in control of the outcome.",
+    tech: ["Flutter", "Web admin platform", "LLM integration", "Real-time dashboards"],
+  },
+  {
+    name: "Calling All Kids",
+    category: "Consumer mobile app",
+    image: imgCallingAllKids,
+    alt: "Calling All Kids app screens showing animated characters and a voice call interface",
+    summary:
+      "A parenting app where children hold spoken conversations with animated characters instead of tapping through a menu.",
+    contribution:
+      "I built the Flutter application and integrated the speech recognition and natural-language layer that turns what a child says into a character response, along with the audio handling and app flows around it.",
+    tech: ["Flutter", "Speech recognition", "Natural-language features", "Mobile audio"],
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.callingAllKids.cak&hl=en",
+      label: "View on Google Play",
+    },
+  },
+  {
+    name: "INGAGE GG",
+    category: "E-sports platform",
+    image: imgIngage,
+    alt: "INGAGE GG app screens showing tournament brackets and player profiles",
+    summary:
+      "An e-sports platform for running tournaments: team creation, elimination brackets, a prize-pool wallet and player career profiles.",
+    contribution:
+      "I led Flutter development of the mobile client and implemented the live match tracking and notification features against WebSocket and Firebase services, working as part of the wider platform team.",
+    tech: ["Flutter", "BLoC", "Firebase", "WebSockets", "Stripe"],
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.ingage.gg&pcampaignid=web_share",
+      label: "View on Google Play",
+    },
+  },
+  {
+    name: "goCare",
+    category: "Telemedicine app",
+    image: imgGocare,
+    alt: "goCare app screens showing doctor listings and a consultation view",
+    summary:
+      "A telemedicine app that connects patients with doctors for online consultations rather than a wait at the clinic.",
+    contribution:
+      "I built the Flutter app covering appointments, chat and the consultation flow, and integrated real-time voice and video alongside in-app payments.",
+    tech: ["Flutter", "Firebase", "Agora", "Flutterwave"],
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.gocare.gocare&pcampaignid=web_share",
+      label: "View on Google Play",
+    },
+  },
+];
+
+export const moreProjects = [
+  {
+    name: "Raabta Social",
+    category: "Social networking app",
+    image: imgRaabta,
+    alt: "Raabta Social app screens showing a social feed",
+    line: "The official social networking app for PTI, a political party in Pakistan. I worked on the app features and integrated real-time voice and video with Agora and in-app payments with Flutterwave.",
+    link: { href: "https://apps.apple.com/pk/app/raabta-social/id6444019910", label: "App Store" },
+  },
+  {
+    name: "Tegal",
+    category: "Matchmaking app",
+    image: imgTegal,
+    alt: "Tegal app screens showing profiles and matching",
+    line: "A cross-cultural matchmaking product connecting people from different backgrounds. Flutter application work on profiles, matching and messaging.",
+  },
+  {
+    name: "BuyerBoard",
+    category: "Real estate tool",
+    image: imgBuyerBoard,
+    alt: "BuyerBoard app screens showing property buyer listings",
+    line: "Contractors in the United States list and manage buyers looking to rent or purchase homes, and share buyer profiles with other contractors.",
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.buyerboard.buyer_board&pcampaignid=web_share",
+      label: "Google Play",
+    },
+  },
+  {
+    name: "RevPay",
+    category: "Payments app",
+    image: imgRevPay,
+    alt: "RevPay app screens showing payment collection",
+    line: "A government-backed app for Katsina State, Nigeria, that handles revenue collection from commercial vehicle operators, including Bluetooth receipt printing.",
+    link: {
+      href: "https://play.google.com/store/apps/details?id=ng.revpay.app&pcampaignid=web_share",
+      label: "Google Play",
+    },
+  },
+  {
+    name: "B2BNet",
+    category: "Business networking app",
+    image: imgB2BNet,
+    alt: "B2BNet app screens showing a business directory",
+    line: "A business directory where companies and professionals connect, manage events and keep communication in one place.",
+    link: { href: "https://apps.apple.com/pk/app/b2bnet/id6741923823", label: "App Store" },
+  },
+  {
+    name: "LinkOn",
+    category: "Social app",
+    image: imgLinkOn,
+    alt: "LinkOn app screens showing a feed and profile",
+    line: "A social app with a personalised feed, profile customisation, messaging and privacy controls.",
+    link: { href: "https://apps.apple.com/pk/app/link-on/id6479557341", label: "App Store" },
+  },
+  {
+    name: "Bracktix",
+    category: "E-sports app",
+    image: imgBracktix,
+    alt: "Bracktix app screens showing tournaments and streaming",
+    line: "Tournament management combined with live match streaming, including teams and channels.",
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.sadacode.bracktix&pcampaignid=web_share",
+      label: "Google Play",
+    },
+  },
+];
+
+export const services = [
+  {
+    title: "Mobile application development",
+    audience: "Founders and teams who need one product on both Android and iOS.",
+    delivers:
+      "Cross-platform Flutter apps end to end: interface work, state management, API integration, authentication, push notifications and store release.",
+    proof: "Calling All Kids, INGAGE GG",
+  },
+  {
+    title: "Web applications and admin platforms",
+    audience: "Teams who need to run and support the product behind the app.",
+    delivers:
+      "Dashboards and internal tools for managing users, tasks and content, built against the same APIs as the mobile client so both stay in step.",
+    proof: "FSMS",
+  },
+  {
+    title: "Python and applied AI integration",
+    audience: "Teams adding AI features to a product that already exists.",
+    delivers:
+      "Hosted language models and speech services connected to real application flows, with the Python and API work that makes a model useful rather than a demo.",
+    proof: "FSMS, Calling All Kids",
+  },
+  {
+    title: "Existing product improvements",
+    audience: "Teams with an app already in production.",
+    delivers:
+      "Adding features to a live codebase, fixing defects, improving structure and maintainability, refining interfaces and supporting releases.",
+    proof: "Applies across the work shown here",
+  },
+];
+
+export const appliedAi = {
+  heading: "AI features built into useful software.",
+  intro:
+    "Most of my AI work is integration. The interesting problem is rarely the model itself; it is everything around it that decides whether a feature is dependable enough to put in front of users.",
+  items: [
+    {
+      title: "Language-model features in applications",
+      body: "Conversational support attached to a specific workflow, such as the per-task chat agents in FSMS, where the model drafts and suggests while a person stays responsible for the outcome.",
+    },
+    {
+      title: "Speech and natural-language interaction",
+      body: "Spoken interaction inside a mobile app, including the child-to-character conversations in Calling All Kids.",
+    },
+    {
+      title: "Python for integration and automation",
+      body: "The service integration, data handling and automation that connects a model to the rest of a product.",
+    },
+    {
+      title: "Application orchestration",
+      body: "Prompt and state handling, API calls, error paths and sensible fallbacks for when a model is slow, wrong or unavailable.",
+    },
+  ],
+  scope:
+    "To be precise about scope: this work uses hosted models through APIs and integrates them into products. I have not trained or fine-tuned models, and retrieval pipelines and vector databases are not part of the production work shown here.",
+};
+
 export const workDetails = [
   {
-    Position: "Senior Flutter Developer",
-    Company: `DyCoders `,
-    Location: "Lahore,Pakistan",
-    Type: "Full Time",
-    Duration: "Nov 2024 - Present",
+    role: "Senior Flutter Developer & AI Engineer",
+    company: "Dextrologix",
+    location: "Lahore, Pakistan",
+    period: "2024 – Present",
+    bullets: [
+      "Lead Flutter development of FSMS, a facility management product with a mobile app and a web admin platform.",
+      "Designed the AI agent layer that attaches a conversational agent to each complaint or task to support routing, escalation and resolution.",
+      "Built admin-side features including real-time dashboards and task tracking.",
+    ],
   },
   {
-    Position: "Senior Flutter Developer",
-    Company: `Triaxo Solutions`,
-    Location: "Lahore,Pakistan",
-    Type: "Full Time",
-    Duration: "Oct 2023 - Nov 2024",
+    role: "Senior Mobile Application Developer",
+    company: "INGAGE GG",
+    location: "London, England",
+    period: "Nov 2024 – 2025",
+    bullets: [
+      "Led Flutter development of an e-sports platform covering tournaments, wallet features and player career profiles.",
+      "Implemented live match tracking and notifications against WebSocket and Firebase services.",
+    ],
   },
   {
-    Position: "Mobile Developer Team Lead",
-    Company: `Socioon Limited`,
-    Location: "Lahore,Pakistan",
-    Type: "Full Time",
-    Duration: "Sep 2022 - Oct 2023",
+    role: "Senior Flutter Developer",
+    company: "Triaxo Solutions",
+    location: "Lahore, Pakistan",
+    period: "Oct 2023 – Oct 2024",
+    bullets: [
+      "Delivered production Flutter applications integrating AI/ML models for real-time on-device inference.",
+      "Set up and maintained CI/CD pipelines with GitHub Actions.",
+    ],
   },
   {
-    Position: "Flutter Developer",
-    Company: `Devsinn Technologies`,
-    Location: "Lahore,Pakistan",
-    Type: "Full Time",
-    Duration: "Sep 2020 - Sep 2022",
+    role: "Mobile Application Developer",
+    company: "Socioon Limited",
+    location: "Lahore, Pakistan",
+    period: "Oct 2022 – Oct 2023",
+    bullets: [
+      "Built and launched Raabta Social, the official social networking app for PTI, a political party in Pakistan.",
+      "Integrated Agora for real-time voice and video, and Flutterwave for in-app payments.",
+    ],
   },
 ];
 
-// Enter your Education Details here
-export const eduDetails = [
-  {
-    Position: "Flutter Developer",
-    Company: "NEVTAC",
-    Location: "Online",
-    Type: "Full Time",
-    Duration: "Sep 2020 -Mar 2021",
-  },
-  {
-    Position: "Bachelor in Information Teachnology",
-    Company: `University of Punjab`,
-    Location: "Lahore",
-    Type: "Full Time",
-    Duration: "Sep 2019 -Sep 2023",
-  },
+export const capabilities = [
+  { group: "Mobile", items: "Flutter, Dart, Kotlin, Java, SwiftUI" },
+  { group: "Web and backend", items: "React, Laravel, PHP, MySQL, Firebase" },
+  { group: "Python and AI", items: "Python, LLM integration, speech and natural-language services, TensorFlow Lite, ML Kit" },
+  { group: "APIs and real-time", items: "REST APIs, GraphQL, WebSockets, Agora, push notifications" },
+  { group: "Delivery and tooling", items: "Git, GitHub Actions, Stripe, Flutterwave, Postman, Figma" },
 ];
 
-// Tech Stack and Tools
-export const techStackDetails = {
-  html: html,
-  css: css,
-  js: js,
-  react: react,
-  php: php,
-  flutter: flutter,
-  bootstrap: bootstrap,
-  vscode: vscode,
-  postman: postman,
-  mysql: mysql,
-  git: git,
-  github: github,
-  figma: figma,
-  laravel: laravel,
+export const capabilitiesNote =
+  "Day-to-day work is mostly Flutter, Dart and Python. The rest I have used on projects that shipped, at varying depth.";
+
+export const about = {
+  paragraphs: [
+    "I'm Irfan Haider, a software developer based in Lahore, Pakistan. I work across mobile applications, web platforms and applied AI, turning product requirements into software a team can actually run in production. My experience covers facility management, e-sports, telemedicine, social networking and consumer apps.",
+    "I tend to own the whole path of a feature: the mobile client, the admin screens that support it, the API work in between, and the release that puts it in front of people. Recent work has combined that with language-model features, where the engineering problem is making a model useful inside a product rather than impressive on its own.",
+    "I work with founders, agencies and in-house teams, usually as the developer responsible for a product area rather than a pair of hands on a ticket queue.",
+  ],
+  education: "BS Information Technology, University of the Punjab, 2019–2023",
 };
 
-// Enter your Project Details here
-export const projectDetails = [
+export const process = [
   {
-    title: "INGAGE GG",
-    image: projectImage1,
-    description: `An esports tournament management platform designed for games like Pokémon Unite. The app supports single and double elimination brackets, team creation, and seamless payment handling for tournament entries.`,
-    techstack: "Flutter, BLoC, Firebase, REST APIs, Push Notification, Firebase Chatting, Stripe API",
-    previewLink: "https://play.google.com/store/apps/details?id=com.ingage.gg&pcampaignid=web_share",
-    githubLink: "https://github.com",
+    title: "Understand the product and constraints",
+    body: "What the product has to do, who uses it, and what the existing systems, timeline and team allow.",
   },
   {
-    title: "BuyerBoard",
-    image: projectImage2,
-    description: `A real estate collaboration platform for U.S. state buyers. The app allows contractors to list and manage buyers looking to rent or purchase homes. Contractors can also connect with other contractors to share buyer profiles and close deals faster.`,
-    techstack: "Flutter, BLoC, Firebase, REST APIs, WebSockets, OneSignal",
-    previewLink: "https://play.google.com/store/apps/details?id=com.buyerboard.buyer_board&pcampaignid=web_share",
-    githubLink: "https://github.com",
+    title: "Define scope and technical approach",
+    body: "An agreed scope, the architecture and services it needs, and the order the work happens in.",
   },
   {
-    title: "Raabta Social",
-    image: projectImage3,
-    description: `A social media platform for PTI (Pakistan Tehreek-e-Insaf), enabling supporters to stay updated with news, media, and campaigns. The app includes a feed for posts, video content, and engagement tools tailored for political outreach.`,
-    techstack: "Flutter, Provider, Firebase, REST APIs, Push Notification, WebSockets, Stripe API",
-    previewLink: "https://apps.apple.com/pk/app/raabta-social/id6444019910",
-    githubLink: "https://github.com",
+    title: "Build, review and refine",
+    body: "Work delivered in reviewable pieces, with adjustments as the product becomes real rather than at the end.",
   },
   {
-    title: "Gocare",
-    image: projectImage4,
-    description: `A telemedicine app that allows patients to easily connect with doctors for consultations, schedule appointments, and receive virtual care through chat and video calls.`,
-    techstack: "Flutter, Provider, Firebase, Agora, Flutterwave",
-    previewLink: "https://play.google.com/store/apps/details?id=com.gocare.gocare&pcampaignid=web_share",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "RevPay",
-    image: projectImage5,
-    description: `A government-backed mobile app for Katsina State, Nigeria, that streamlines revenue collection from commercial vehicle operators, providing a secure and user-friendly payment platform.`,
-    techstack: "Flutter, RiverPood, Firebase, REST APIs, Push Notification, Bluetooth Connection",
-    previewLink: "https://play.google.com/store/apps/details?id=ng.revpay.app&pcampaignid=web_share",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "LinkOn",
-    image: projectImage6,
-    description: `A social media app that enables users to share updates, photos, and messages, with features like a personalized feed, profile customization, integrated messaging, and robust privacy controls.`,
-    techstack: "Flutter, Provider, Firebase, REST APIs, Push Notification, WebSockets, Stripe API",
-    previewLink: "https://apps.apple.com/pk/app/link-on/id6479557341",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "B2BNet",
-    image: projectImage7,
-    description: `B2BNet is a global business directory and networking platform that helps businesses and professionals connect, collaborate, and grow. Whether you're a startup, SME, or industry expert, B2BNet offers tools to enhance visibility, manage events, and streamline communication.`,
-    techstack: "Flutter, Bloc, Firebase, REST APIs, Push Notification",
-    previewLink: "https://apps.apple.com/pk/app/b2bnet/id6741923823",
-    githubLink: "https://github.com",
-  },
-
-  {
-    title: "Bracktix",
-    image: projectImage8,
-    description: `A complete esports solution that combines tournament
-management with live streaming features. Users can create
-teams, manage channels, host or join tournaments, and
-stream matches in real-time.`,
-    techstack: "Flutter, Bloc, Firebase, REST APIs, Push Notification",
-    previewLink: "https://play.google.com/store/apps/details?id=com.sadacode.bracktix&pcampaignid=web_share",
-    githubLink: "https://github.com",
+    title: "Test, release and support",
+    body: "Testing on real devices, release to the stores or the server, and support for what comes after.",
   },
 ];
 
-// Enter your Contact Details here
-export const contactDetails = {
-  email: "irfannaqviwork@gmail.com",
-  phone: "+92 3062865703",
+export const contactCopy = {
+  heading: "Let's discuss what you're building.",
+  body: "Share your product idea, current challenges, or the development support you need.",
+  privacy:
+    "Your name, email and message are sent to my inbox through EmailJS so that I can reply. Nothing is stored on this site.",
+  projectTypes: [
+    "Mobile app",
+    "Web app or admin platform",
+    "AI integration",
+    "Improving an existing product",
+    "Something else",
+  ],
 };

@@ -1,59 +1,38 @@
-import React, { useEffect } from "react";
-import Header from "./Components/Header";
+import React from "react";
+import Nav from "./Components/Nav";
 import Hero from "./Components/Hero";
-import About from "./Components/About";
-import Skills from "./Components/Skills";
+import Work from "./Components/Work";
+import Services from "./Components/Services";
+import AppliedAi from "./Components/AppliedAi";
 import Experience from "./Components/Experience";
-import Projects from "./Components/Projects";
+import About from "./Components/About";
+import Process from "./Components/Process";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import './index.css';
+import "./index.css";
 
 function App() {
-  useEffect(() => {
-    // Smooth scrolling for anchor links
-    const handleAnchorClick = (e) => {
-      const href = e.target.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    };
-
-    // Add click event listeners to all anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-      link.addEventListener('click', handleAnchorClick);
-    });
-
-    return () => {
-      anchorLinks.forEach(link => {
-        link.removeEventListener('click', handleAnchorClick);
-      });
-    };
-  }, []);
-
   return (
-    <div className="App">
-      <Header />
-      <main>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:z-[60] focus:top-3 focus:left-3 focus:px-4 focus:py-2.5 focus:rounded-lg focus:bg-accent focus:text-white focus:font-semibold"
+      >
+        Skip to main content
+      </a>
+      <Nav />
+      <main id="main">
         <Hero />
-        <About />
-        <Skills />
+        <Work />
+        <Services />
+        <AppliedAi />
         <Experience />
-        <Projects />
+        <About />
+        <Process />
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
