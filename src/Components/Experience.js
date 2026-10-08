@@ -8,7 +8,7 @@ function Experience() {
       <div className="page">
         <SectionHeading title="Experience" />
 
-        <ol data-reveal className="mt-10 border-l border-line ml-1 space-y-10">
+        <ol data-reveal className="mt-8 md:mt-10 border-l border-line ml-1 space-y-8 md:space-y-10">
           {workDetails.map((job) => (
             <li key={`${job.company}-${job.period}`} className="relative pl-6 md:pl-8">
               <span
@@ -20,7 +20,7 @@ function Experience() {
               <p className="text-[15px] text-subtle">
                 {job.company}, {job.location}
               </p>
-              <ul className="mt-3 space-y-1.5 max-w-prose">
+              <ul className="trim-list mt-2 md:mt-3 space-y-1.5 max-w-prose">
                 {job.bullets.map((bullet) => (
                   <li
                     key={bullet}
@@ -34,7 +34,7 @@ function Experience() {
           ))}
         </ol>
 
-        <div data-reveal className="mt-16">
+        <div data-reveal className="mt-12 md:mt-16">
           <h3 className="text-[1.375rem]">Capabilities</h3>
           <dl className="mt-5 divide-y divide-line border-y border-line">
             {capabilities.map((group) => (

@@ -86,3 +86,9 @@ export const WrenchIcon = (props) => (
     <path d="M14.5 6.5 17 4l3 3-2.5 2.5" />
   </svg>
 );
+
+export const ArrowUpRightIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="16" height="16" {...base} {...props}>
+    <path d="M7 17 17 7M8 7h9v9" />
+  </svg>
+);

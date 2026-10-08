@@ -20,7 +20,7 @@ export default function useScrollReveal() {
             }
           });
         },
-        { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+        { rootMargin: "0px 0px -40px 0px", threshold: 0 }
       );
       document.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => observer.observe(el));
       root.classList.add("motion-live");

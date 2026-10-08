@@ -53,7 +53,18 @@ export const hero = {
   primaryCta: { label: "View selected work", href: "#work" },
   secondaryCta: { label: "Discuss a project", href: "#contact" },
   support: ["5+ years of experience", "Lahore, Pakistan"],
+  // Phones get a shorter hero. The headline avoids "powered by AI" because
+  // not every project uses AI.
+  mobile: {
+    headline: ["Mobile, web", "& AI.", "Built for real users."],
+    body: "I build mobile apps, web platforms, and practical AI integrations for businesses.",
+    primaryCta: { label: "Explore my work", href: "#work" },
+    secondaryCta: { label: "Discuss a project", href: "#contact" },
+    support: ["5+ years’ experience", "Lahore, Pakistan"],
+  },
 };
+
+export const workIntro = "A selection of products I’ve helped build.";
 
 // Four featured projects. `points` are shown by default; `details` holds the
 // longer explanation behind the "Project details" control. Omit `link` when
@@ -66,13 +77,13 @@ export const featuredProjects = [
     alt: "FSMS dashboard on a laptop beside two mobile screens showing maintenance tasks",
     summary:
       "Facility management platform with a Flutter app for field staff and a web admin platform for coordinators.",
+    ratio: "1200 / 572",
     points: [
-      "Lead Flutter development of the mobile app",
-      "Built the web admin platform, including real-time dashboards and task tracking",
+      "Lead Flutter development of the mobile app and built the web admin platform",
       "Designed the AI layer that attaches a chat agent to each complaint or task",
     ],
     details:
-      "Facility teams handle maintenance complaints and tasks across many sites, and FSMS brings field staff and coordinators into one system. In the AI layer, a language model supports routing, escalation and resolution for each complaint or task, while people stay in control of the outcome.",
+      "Facility teams handle maintenance complaints and tasks across many sites, and FSMS brings field staff and coordinators into one system, with real-time dashboards and task tracking. In the AI layer, a language model supports routing, escalation and resolution for each complaint or task, while people stay in control of the outcome.",
     tech: ["Flutter", "Web admin", "LLM integration", "Real-time dashboards"],
   },
   {
@@ -81,10 +92,10 @@ export const featuredProjects = [
     image: imgCallingAllKids,
     alt: "Calling All Kids app screens showing animated characters and a voice call interface",
     summary: "A parenting app where children hold spoken conversations with animated characters.",
+    ratio: "1200 / 572",
     points: [
-      "Built the Flutter application and its app flows",
+      "Built the Flutter app and its real-time voice conversation flow",
       "Integrated speech recognition and natural-language features",
-      "Built the real-time voice conversation experience",
     ],
     details:
       "The core interaction is spoken rather than tapped: a child talks, the app recognises the speech, and a character replies. My work covered the application around that loop, from the conversation screens to the speech and language integration.",
@@ -101,6 +112,7 @@ export const featuredProjects = [
     alt: "INGAGE GG app screens showing tournament brackets and player profiles",
     summary:
       "An e-sports platform for tournaments, with team creation, brackets, a prize-pool wallet and player career profiles.",
+    ratio: "640 / 350",
     points: [
       "Led Flutter development of the mobile client",
       "Implemented live match tracking and notifications with WebSockets and Firebase",
@@ -119,10 +131,10 @@ export const featuredProjects = [
     image: imgGocare,
     alt: "goCare app screens showing doctor listings and a consultation view",
     summary: "A telemedicine app that connects patients with doctors for online consultations.",
+    ratio: "640 / 350",
     points: [
       "Built the Flutter app: appointments, chat and the consultation flow",
-      "Integrated real-time voice and video with Agora",
-      "Integrated in-app payments with Flutterwave",
+      "Integrated Agora video calls and Flutterwave payments",
     ],
     tech: ["Flutter", "Firebase", "Agora", "Flutterwave"],
     link: {
@@ -202,6 +214,7 @@ export const moreProjects = [
 export const services = [
   {
     title: "Mobile application development",
+    summary: "Cross-platform Flutter apps for Android and iOS, from first screen to store release.",
     icon: "mobile",
     audience: "Founders and teams who need one product on both Android and iOS.",
     delivers:
@@ -210,6 +223,7 @@ export const services = [
   },
   {
     title: "Web applications and admin platforms",
+    summary: "Dashboards and internal tools that let a team run the product behind the app.",
     icon: "web",
     audience: "Teams who need to run and support the product behind the app.",
     delivers:
@@ -218,6 +232,7 @@ export const services = [
   },
   {
     title: "Python and applied AI integration",
+    summary: "Language-model and speech features connected to real application flows.",
     icon: "ai",
     audience: "Teams adding AI features to a product that already exists.",
     delivers:
@@ -226,6 +241,7 @@ export const services = [
   },
   {
     title: "Existing product improvements",
+    summary: "New features, fixes and cleaner structure for apps already in production.",
     icon: "improve",
     audience: "Teams with an app already in production.",
     delivers:
@@ -241,18 +257,22 @@ export const appliedAi = {
   items: [
     {
       title: "Conversational features in applications",
+      short: "Language-model support inside specific workflows, with a person responsible for the outcome.",
       body: "Language-model support attached to a specific workflow, such as the per-task chat agents in FSMS, where the model assists and a person stays responsible for the outcome.",
     },
     {
       title: "Speech and natural-language interaction",
+      short: "Spoken interaction inside mobile apps.",
       body: "Spoken interaction inside a mobile app, including the child-to-character conversations in Calling All Kids.",
     },
     {
       title: "Workflow automation with Python",
+      short: "Integration and data handling that connect models to a product.",
       body: "The service integration and data handling that connect a model to the rest of a product and its operations.",
     },
     {
       title: "Dependable integration",
+      short: "Error handling and fallbacks for when a model is slow or unavailable.",
       body: "Prompt and state handling, API calls, error paths and fallbacks for when a model is slow, wrong or unavailable.",
     },
   ],
@@ -319,6 +339,8 @@ export const about = {
     "I tend to own the whole path of a feature: the mobile client, the admin screens that support it, the API work in between, and the release that puts it in front of people. Recent work has combined that with language-model features, where the engineering problem is making a model useful inside a product rather than impressive on its own.",
     "I work with founders, agencies and in-house teams, usually as the developer responsible for a product area rather than a pair of hands on a ticket queue.",
   ],
+  short:
+    "I'm a software developer in Lahore working across mobile apps, web platforms and applied AI. I usually own a feature end to end: the mobile client, the admin screens, the APIs in between, and the release.",
   education: "BS Information Technology, University of the Punjab, 2019–2023",
 };
 

@@ -18,7 +18,8 @@
 @media (max-width: 767px) {
   :root {
     --reveal-y: 10px;
-    --hero-y: 12px;
+    --hero-y: 10px;
+    --dur-enter: 450ms;
   }
 }
 
@@ -63,6 +64,12 @@
   ::selection {
     @apply bg-accent-soft text-ink;
   }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
 }
 
 @layer components {
@@ -71,7 +78,7 @@
   }
 
   .section {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-24;
   }
 
   .h2 {
@@ -79,7 +86,7 @@
   }
 
   .lead {
-    @apply text-lg text-slate max-w-prose;
+    @apply text-[17px] md:text-lg text-slate max-w-prose;
   }
 
   .btn {
@@ -225,8 +232,9 @@
     background-color var(--dur-base) var(--ease-out);
 }
 .site-header[data-scrolled="true"] {
-  border-color: #e2e8f0;
-  box-shadow: 0 8px 24px -16px rgba(15, 23, 42, 0.25);
+  box-shadow:
+    0 1px 0 #e2e8f0,
+    0 8px 24px -16px rgba(15, 23, 42, 0.25);
 }
 
 .nav-indicator {
@@ -330,6 +338,8 @@
 .media-frame.flush {
   border-width: 0 0 1px 0;
   border-radius: 0;
+  /* Native ratio of the 640x350 store screenshots, so nothing is cropped. */
+  aspect-ratio: 640 / 350;
 }
 
 /* Dark closing section: focus rings switch to a light indigo so they stay
@@ -339,4 +349,36 @@
 }
 .on-dark .panel :focus-visible {
   outline-color: #4338ca;
+}
+
+/* ------------------------------------------------------------------
+   Phones (below 768px)
+   ------------------------------------------------------------------ */
+.hero-mobile-title {
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 2.375rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Focused fields stay clear of the sticky header and the on-screen
+   keyboard when the browser scrolls them into view. */
+input,
+select,
+textarea {
+  scroll-margin-top: 5.5rem;
+  scroll-margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  /* A single soft wash behind the hero, echoing the mockup. Static. */
+  .hero {
+    background: radial-gradient(75% 50% at 102% 42%, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0) 72%);
+  }
+
+  /* Keep the most relevant tags and the most important bullets. */
+  .trim-tags > li:nth-child(n + 4),
+  .trim-list > li:nth-child(n + 3) {
+    display: none;
+  }
 }

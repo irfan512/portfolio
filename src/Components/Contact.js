@@ -76,12 +76,12 @@ function Contact() {
 
   return (
     <section id="contact" className="on-dark section bg-ink text-mist">
-      <div className="page grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+      <div className="page grid gap-8 md:gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
         <div data-reveal>
           <h2 className="h2 text-white max-w-[16ch] lg:text-[2.75rem]">{contactCopy.heading}</h2>
-          <p className="mt-4 text-lg text-mist max-w-prose">{contactCopy.body}</p>
+          <p className="mt-3 md:mt-4 text-[17px] md:text-lg text-mist max-w-prose">{contactCopy.body}</p>
 
-          <dl className="mt-8 space-y-5">
+          <dl className="mt-6 md:mt-8 space-y-4 md:space-y-5">
             <div>
               <dt className="text-[14px] font-semibold text-haze">Email</dt>
               <dd className="text-lg wrap-anywhere">
@@ -110,7 +110,7 @@ function Contact() {
             </div>
           </dl>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 md:mt-8 flex flex-wrap gap-3">
             <a
               href={socialLinks.github}
               target="_blank"

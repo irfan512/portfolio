@@ -1,5 +1,5 @@
 import React, { useEffect, useId, useRef, useState } from "react";
-import { featuredProjects, moreProjects } from "../Details";
+import { featuredProjects, moreProjects, workIntro } from "../Details";
 import SectionHeading from "./SectionHeading";
 import { ChevronIcon, ExternalIcon } from "./Icons";
 
@@ -13,18 +13,18 @@ function Featured({ project, index }) {
   return (
     <article
       data-reveal
-      className="project grid gap-6 md:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-14 lg:items-center"
+      className="project grid gap-5 md:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-14 lg:items-center"
     >
-      <div className={`media-frame ${reverse ? "lg:order-2" : ""}`}>
+      <div className={`media-frame ${reverse ? "lg:order-2" : ""}`} style={project.ratio ? { aspectRatio: project.ratio } : undefined}>
         <img src={project.image} alt={project.alt} width="1200" height="600" loading="lazy" decoding="async" />
       </div>
 
       <div className={reverse ? "lg:order-1" : ""}>
         <p className="text-[14px] font-semibold text-accent">{project.category}</p>
-        <h3 className="mt-1.5 text-[1.625rem] sm:text-[1.875rem]">{project.name}</h3>
-        <p className="mt-3 max-w-prose">{project.summary}</p>
+        <h3 className="mt-1 text-[1.5rem] sm:text-[1.875rem]">{project.name}</h3>
+        <p className="mt-2 md:mt-3 max-w-prose">{project.summary}</p>
 
-        <p className="mt-6 text-[15px] font-semibold text-ink">What I did</p>
+        <p className="mt-4 md:mt-6 text-[15px] font-semibold text-ink">What I did</p>
         <ul className="mt-2 space-y-2">
           {project.points.map((point) => (
             <li key={point} className="relative pl-5 text-[16px] leading-relaxed">
@@ -37,7 +37,7 @@ function Featured({ project, index }) {
           ))}
         </ul>
 
-        <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+        <ul className="trim-tags mt-4 md:mt-5 flex flex-wrap gap-2" aria-label="Technologies">
           {project.tech.map((item) => (
             <li key={item} className="tag">
               {item}
@@ -46,7 +46,7 @@ function Featured({ project, index }) {
         </ul>
 
         {(project.link || project.details) && (
-          <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-1">
+          <div className="mt-3 md:mt-5 flex flex-wrap items-center gap-x-6 gap-y-1">
             {project.link && (
               <a href={project.link.href} target="_blank" rel="noopener noreferrer" className="link">
                 {project.link.label}
@@ -102,7 +102,7 @@ function MoreProjects() {
   };
 
   return (
-    <div className="mt-24 pt-12 border-t border-line">
+    <div className="mt-16 pt-10 md:mt-24 md:pt-12 border-t border-line">
       <div data-reveal>
         <h3 className="text-[1.375rem] sm:text-2xl">More projects</h3>
         <p className="mt-2 text-[16px] max-w-prose">Other apps I have worked on, most of them live on the app stores.</p>
@@ -165,11 +165,11 @@ function Work() {
       <div className="page">
         <SectionHeading
           title="Selected work"
-          intro="Products I have built or led development on, and what I was responsible for on each one."
+          intro={workIntro}
           titleClassName="lg:text-[2.75rem]"
         />
 
-        <div className="mt-12 md:mt-16 space-y-16 md:space-y-24">
+        <div className="mt-7 md:mt-16 space-y-12 md:space-y-24">
           {featuredProjects.map((project, index) => (
             <Featured key={project.name} project={project} index={index} />
           ))}

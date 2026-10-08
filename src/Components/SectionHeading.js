@@ -5,7 +5,7 @@ function SectionHeading({ title, intro, className = "", titleClassName = "", int
   return (
     <div data-reveal className={className}>
       <h2 className={`h2 ${titleClassName}`}>{title}</h2>
-      {intro && <p className={`lead mt-4 ${introClassName}`}>{intro}</p>}
+      {intro && <p className={`lead mt-2 md:mt-4 ${introClassName}`}>{intro}</p>}
     </div>
   );
 }

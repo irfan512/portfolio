@@ -138,7 +138,7 @@ function Nav() {
       ref={headerRef}
       onBlur={onHeaderBlur}
       data-scrolled={scrolled || isOpen ? "true" : "false"}
-      className="site-header sticky top-0 z-50 bg-canvas/90 backdrop-blur-sm border-b border-transparent"
+      className="site-header sticky top-0 z-50 bg-canvas/90 backdrop-blur-sm"
     >
       <div className="page flex items-center justify-between h-16">
         <a href="#top" className="inline-flex items-center py-2 font-bold text-ink text-[17px] tracking-tight">

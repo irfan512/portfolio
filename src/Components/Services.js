@@ -14,7 +14,7 @@ function Services() {
           intro="How I usually work with clients, and the projects on this page that show each one."
         />
 
-        <div data-reveal className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+        <div data-reveal className="mt-8 md:mt-12 grid gap-x-12 gap-y-7 md:gap-y-10 md:grid-cols-2">
           {services.map((service) => {
             const Icon = ICONS[service.icon];
             return (
@@ -26,10 +26,13 @@ function Services() {
                   {Icon && <Icon />}
                 </span>
                 <div>
-                  <h3 className="text-[1.25rem]">{service.title}</h3>
-                  <p className="mt-1 text-[15px] text-subtle">{service.audience}</p>
-                  <p className="mt-3 text-[16px] leading-relaxed">{service.delivers}</p>
-                  <p className="mt-3 text-[15px]">
+                  <h3 className="text-[1.125rem] md:text-[1.25rem]">{service.title}</h3>
+                  <p className="md:hidden mt-1.5 text-[16px] leading-relaxed">{service.summary}</p>
+                  <div className="hidden md:block">
+                    <p className="mt-1 text-[15px] text-subtle">{service.audience}</p>
+                    <p className="mt-3 text-[16px] leading-relaxed">{service.delivers}</p>
+                  </div>
+                  <p className="mt-2 md:mt-3 text-[15px]">
                     <span className="font-semibold text-ink">Shown in: </span>
                     {service.proof}
                   </p>
