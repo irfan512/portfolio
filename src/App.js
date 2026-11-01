@@ -10,6 +10,7 @@ import About from "./Components/About";
 import Process from "./Components/Process";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import ChatWidget from "./Components/ChatWidget";
 import "./index.css";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget />
     </>
   );
 }

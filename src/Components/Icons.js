@@ -92,3 +92,23 @@ export const ArrowUpRightIcon = (props) => (
     <path d="M7 17 17 7M8 7h9v9" />
   </svg>
 );
+
+export const ChatIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
+    <path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12Z" />
+    <path d="M8.5 11h.01M12 11h.01M15.5 11h.01" />
+  </svg>
+);
+
+export const SendIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="18" height="18" {...base} {...props}>
+    <path d="M4 12 20 4l-6 16-2.5-6.5L4 12Z" />
+    <path d="M11.5 13.5 20 4" />
+  </svg>
+);
+
+export const ResetIcon = (props) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...props}>
+    <path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5" />
+  </svg>
+);

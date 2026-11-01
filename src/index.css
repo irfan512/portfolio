@@ -382,3 +382,69 @@ textarea {
     display: none;
   }
 }
+
+/* ------------------------------------------------------------------
+   PortfolioAI chat. Opens and closes like the mobile menu: faded and
+   nudged when closed, removed from the tab order once the fade ends.
+   ------------------------------------------------------------------ */
+.chat-panel {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0) scale(0.98);
+  transform-origin: bottom right;
+  visibility: hidden;
+  transition:
+    opacity 220ms var(--ease-out),
+    transform 220ms var(--ease-out),
+    visibility 0s linear 220ms;
+}
+.chat-panel[data-open="true"] {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition:
+    opacity 220ms var(--ease-out),
+    transform 220ms var(--ease-out),
+    visibility 0s;
+}
+
+.chat-launcher {
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+.chat-launcher:active {
+  transform: scale(0.96);
+}
+@media (hover: hover) and (pointer: fine) {
+  .chat-launcher:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -12px rgba(67, 56, 202, 0.6);
+  }
+  .chat-icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Waiting indicator: three dots, static under reduced motion. */
+@keyframes chat-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: none;
+  }
+  40% {
+    opacity: 1;
+    transform: translate3d(0, -2px, 0);
+  }
+}
+.chat-dot {
+  animation: chat-dot 1.2s var(--ease-out) infinite;
+}
+.chat-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.chat-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
