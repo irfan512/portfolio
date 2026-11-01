@@ -31,7 +31,7 @@ function Message({ message, onNavigate }) {
         <span className="sr-only">{assistantCopy.name}: </span>
         {message.text}
       </p>
-      {message.insufficient && (
+      {message.insufficient && !message.outOfScope && (
         <p className="mt-2 text-[14px] text-subtle">{assistantCopy.notInPortfolio}</p>
       )}
       {message.citations && message.citations.length > 0 && (
@@ -139,6 +139,7 @@ function ChatPanel({ isOpen, onClose, onNavigate, ask = askPortfolioAI }) {
             text: result.answer,
             citations: result.citations,
             insufficient: result.insufficientEvidence,
+            outOfScope: result.outOfScope,
           },
         ]);
       } catch (error) {
@@ -297,7 +298,6 @@ function ChatPanel({ isOpen, onClose, onNavigate, ask = askPortfolioAI }) {
             <SendIcon />
           </button>
         </div>
-        <p className="mt-2 text-sm text-subtle">{assistantCopy.privacy}</p>
       </form>
     </>
   );

@@ -233,3 +233,22 @@ test("a long Retry-After never asks visitors to wait for hours", async () => {
   expect(await screen.findByText(assistantCopy.errors.rate_limited)).toBeInTheDocument();
   expect(screen.queryByText(/41000/)).not.toBeInTheDocument();
 });
+
+test("an out-of-scope question shows the scope message without sources or the 'not covered' note", async () => {
+  const scope =
+    "Thanks for your question! I'm here to help you explore Irfan's professional portfolio, including his projects, technical skills, experience, and services. Your question is outside that scope, but I'd be happy to help with anything related to his work.";
+  global.fetch.mockReturnValueOnce(
+    reply(200, answer({ answer: scope, citations: [], insufficient_evidence: true, out_of_scope: true }))
+  );
+  const input = await openChat();
+  userEvent.type(input, "Who won the football World Cup?{enter}");
+  expect(await screen.findByText(scope)).toBeInTheDocument();
+  expect(screen.queryByText(assistantCopy.sources)).not.toBeInTheDocument();
+  expect(screen.queryByText(assistantCopy.notInPortfolio)).not.toBeInTheDocument();
+});
+
+test("the input has no disclaimer underneath; the privacy note lives in the welcome", async () => {
+  await openChat();
+  expect(screen.queryByText(/may be imperfect/i)).not.toBeInTheDocument();
+  expect(screen.getByText(/Please don't share personal information here/)).toBeInTheDocument();
+});

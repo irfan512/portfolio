@@ -32,7 +32,7 @@ function safeCitations(list) {
 }
 
 /**
- * POST /api/v1/chat. Resolves to { answer, citations, sessionId, insufficientEvidence }
+ * POST /api/v1/chat. Resolves to { answer, citations, sessionId, insufficientEvidence, outOfScope }
  * or rejects with a ChatError whose `code` is one of: rate_limited, busy, timeout,
  * service_unavailable, invalid_request, network, aborted, unexpected.
  */
@@ -81,5 +81,6 @@ export async function askPortfolioAI(message, sessionId, { signal, timeoutMs = R
     citations: safeCitations(body.citations),
     sessionId: typeof body.session_id === "string" ? body.session_id : null,
     insufficientEvidence: Boolean(body.insufficient_evidence),
+    outOfScope: Boolean(body.out_of_scope),
   };
 }
